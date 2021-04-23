@@ -53,16 +53,10 @@
         </div>
         <!-- comincia lista delle chat -->
         <ul>
-          <li>
+          <li v-for="user in users">
             <a href="#" class="account-box">
-              <img src="img/avatar_1.jpg" alt="person" />
-              <span>Michele</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="account-box">
-              <img src="img/avatar_2.jpg" alt="person" />
-              <span>Fabio</span>
+              <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
+              <span>{{user.name}}</span>
             </a>
           </li>
         </ul>
