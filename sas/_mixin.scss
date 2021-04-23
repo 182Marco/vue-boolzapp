@@ -145,6 +145,7 @@
 }
 
 @mixin a($color: $brand) {
-  color: $color;
+  color: #000;
   text-decoration: none;
+  display: inline-block;
 }
