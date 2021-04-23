@@ -1,0 +1,14 @@
+// classe che centra con flex i
+// figli verticale e orizzontale
+.flex-xy-center {
+  @include flex(row, center, center);
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+}

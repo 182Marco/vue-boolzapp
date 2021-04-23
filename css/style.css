@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+.flex-xy-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-transform: rotate(180);
+          transform: rotate(180);
+}
+
+input {
+  border: 0;
+  border-bottom: 1px solid #6cc7f8;
+  background-color: transparent;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 4px 2px -2px #6cc7f8;
+          box-shadow: 0 4px 2px -2px #6cc7f8;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  min-width: 7rem;
+  padding: 0.4rem 1.3rem;
+  margin: 1vw;
+  font-weight: bold;
+  background: transparent;
+  border: 1px solid #6cc7f8;
+  color: #6cc7f8;
+  border-radius: 7px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: #6cc7f8;
+  color: #fff;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+a {
+  color: #6cc7f8;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: calc(1.8rem + 1vw);
+  margin-bottom: 4vh;
+}
+
+h2 {
+  margin-bottom: 2vh;
+}
+
+h3,
+h4,
+h5 {
+  margin: 2vh 0;
+}
+
+p {
+  margin: 1.5vh 0;
+  line-height: 1.4rem;
+}
+
+label {
+  font-size: calc(1.2rem + 1vw);
+}
+
+body {
+  background-color: #282b35;
+  color: #ccc;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #282b35;
+  color: #ccc;
+}
+
+main {
+  width: 80vw;
+  height: 85vh;
+  padding: 0 30px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+main section,
+main .itemList {
+  width: 100%;
+  margin-top: 1vh;
+}
+
+main section li:last-child,
+main .itemList li:last-child {
+  margin-bottom: 3vh;
+}
+
+main .errwrap {
+  position: relative;
+  margin: 2vh 0;
+  height: 50px;
+  text-align: left;
+  color: red;
+}
+
+main .errwrap .err {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+main .errwrap .err:last-child {
+  top: 50%;
+}
+
+input {
+  margin-top: 2vh;
+}
+
+#addItem {
+  color: #6cc7f8;
+  width: 100%;
+  font-size: calc(1rem + 1vw);
+}
+
+summary {
+  font-size: calc(1rem + 1vw);
+  text-align: left;
+  padding-bottom: 1.5vh;
+}
+
+summary:focus {
+  outline: none;
+}
+
+.itemList {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: auto;
+}
+
+.itemList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5vh 0;
+  font-size: calc(0.7rem + 1vw);
+  border-bottom: 1px solid #ccc;
+}
+
+.itemList li span {
+  cursor: pointer;
+}
+
+.itemList li span.done {
+  text-decoration: line-through;
+}
+
+.itemList li span:hover {
+  color: #fff;
+}
+
+.itemList li i {
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.itemList li i:hover {
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  color: #6cc7f8;
+}
+
+:-ms-input-placeholder {
+  color: #6cc7f8;
+}
+
+::-ms-input-placeholder {
+  color: #6cc7f8;
+}
+
+::placeholder {
+  color: #6cc7f8;
+}
+
+.err.no-show {
+  display: none;
+}
+
+.done {
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=style.css.map */
