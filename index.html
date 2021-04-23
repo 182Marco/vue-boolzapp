@@ -19,9 +19,31 @@
     <title>Boolzapp</title>
   </head>
   <body>
+    <!-- parte app escluso lo sfondo -->
     <main id="app">
-      <aside></aside>
-      <section></section>
+      <!-- macroarea sx -->
+      <aside>
+        <!-- intestazione -->
+        <header></header>
+        <div class="active-note-box"></div>
+        <div class="search-contact-box">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Cerca o inizia una nova chat" />
+        </div>
+      </aside>
+      <!-- macroarea dx -->
+      <section>
+        <!-- intestazione -->
+        <header></header>
+        <!-- area sended message -->
+        <div class="sended-area"></div>
+        <!-- area per invio (footer) -->
+        <footer>
+          <i class="far fa-smile"></i>
+          <input type="text" placeholder="Scrivi un messaggio" />
+          <i class="fas fa-microphone"></i>
+        </footer>
+      </section>
     </main>
     <!-- main js -->
     <script src="main.js" charset="utf-8"></script>

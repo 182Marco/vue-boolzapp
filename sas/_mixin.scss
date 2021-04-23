@@ -137,12 +137,10 @@
 
 @mixin input($color: $brand) {
   border: 0;
-  border-bottom: 1px solid $brand;
-  background-color: transparent;
+  background-color: #fff;
   &:focus {
     outline: none;
     border: 1px solid transparent;
-    box-shadow: 0 4px 2px -2px $color;
   }
 }
 

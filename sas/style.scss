@@ -25,11 +25,55 @@ section {
 aside {
   flex-basis: 37%;
   border: 2px solid red;
+  .active-note-box {
+    height: 10%;
+    background-color: lightblue;
+  }
+  .search-contact-box {
+    position: relative;
+    border: 1px solid green;
+    height: 7%;
+    background-color: lightgrey;
+    @include flex(row, center, center);
+    input {
+      @include width-height(95%, 85%);
+      padding-left: 15%;
+    }
+    .fa-search {
+      position: absolute;
+      left: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }
 
 // sezione della messaggistica
+header,
+footer {
+  background-color: lightgrey;
+  height: 9%;
+}
+
 section {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   border: 2px solid green;
+}
+
+.sended-area {
+  flex-grow: 1;
+  background-image: url(../img/mine.jpg);
+}
+
+// footer (area scrittura messaggi)
+footer {
+  @include flex(row, space-around, center);
+  width: 100%;
+  input {
+    padding: 0 2%;
+    @include width-height(77%, 75%);
+  }
 }
 @import '_jsClasses.scss';
