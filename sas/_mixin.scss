@@ -65,29 +65,30 @@
 }
 
 //media queries
-@mixin media($breakpoint: $tablet) {
+//media queries se si lavora desktop first
+@mixin media-desk-first($breakpoint: $tablet) {
   @if $breakpoint == phone {
-    @media screen and (min-width: 380px) {
+    @media screen and (max-width: 380px) {
       @content;
     }
   } @else if $breakpoint == tablet {
-    @media screen and (min-width: 450px) {
+    @media screen and (max-width: 450px) {
       @content;
     }
   } @else if $breakpoint == l-tablet {
-    @media screen and (min-width: 500px) {
+    @media screen and (max-width: 500px) {
       @content;
     }
   } @else if $breakpoint == xl-tablet {
-    @media screen and (min-width: 600px) {
+    @media screen and (max-width: 600px) {
       @content;
     }
   } @else if $breakpoint == desktop {
-    @media screen and (min-width: 850px) {
+    @media screen and (max-width: 900px) {
       @content;
     }
   } @else if $breakpoint == full-desktop {
-    @media screen and (min-width: 1150px) {
+    @media screen and (max-width: 1150px) {
       @content;
     }
   }

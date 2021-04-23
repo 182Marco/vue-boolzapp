@@ -2,8 +2,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   transform: rotate(180);
+}
+
+body {
+  @include flex(row, center, center);
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    #32a093 0%,
+    #32a093 15%,
+    #fff 15%,
+    #fff 100%
+  );
+  @include media-desk-first(desktop) {
+    background-image: none;
+    background-color: $darkBg;
+    flex-direction: column;
+    &::before {
+      padding: 0 4%;
+      color: $semiLightTxt;
+      content: "Scarica la versione di quest' app per mobile e tablet";
+      text-align: center;
+      font-weight: bold;
+      font-size: (8vw);
+    }
+  }
 }
 
 input {

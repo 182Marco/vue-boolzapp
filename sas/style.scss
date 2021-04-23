@@ -3,7 +3,33 @@
 @import 'utility.scss';
 @import 'reset.scss';
 @import 'typography.scss';
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-// classi aggiunte da js
+// parte non di sfondo
+main {
+  border: 1px solid blue;
+  min-width: 900px;
+  display: flex;
+  @include width-height(85%, 95%);
+  @include media-desk-first(desktop) {
+    display: none;
+  }
+}
+
+// lista account
+aside,
+section {
+  height: 100%;
+}
+
+aside {
+  flex-basis: 37%;
+  border: 2px solid red;
+}
+
+// sezione della messaggistica
+section {
+  flex-grow: 1;
+  border: 2px solid green;
+}
 @import '_jsClasses.scss';
