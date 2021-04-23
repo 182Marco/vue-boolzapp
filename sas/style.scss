@@ -7,10 +7,9 @@
 
 // parte non di sfondo
 main {
-  border: 1px solid blue;
   min-width: 900px;
   display: flex;
-  @include width-height(85%, 95%);
+  @include width-height(83%, 95%);
   @include media-desk-first(desktop) {
     display: none;
   }
@@ -24,39 +23,48 @@ section {
 
 aside {
   flex-basis: 37%;
-  border: 2px solid red;
+  border-right: 1px solid $bg2;
   .active-note-box {
     height: 10%;
-    background-color: lightblue;
+    background-color: $secondary;
     display: flex;
     align-items: center;
     i {
       @include flex(row, center, center);
       @include width-height($circlewidth, $circlewidth);
       margin-left: $spaceFromBorder;
-      background-color: #fff;
+      background-color: #f5fcff;
+      color: $secondary;
       font-size: $fontSizeUtente;
       border-radius: 50%;
     }
     .wrap {
       margin-left: $spaceFromImg;
+      p {
+        font-size: calc(0.4rem + 0.5vw);
+      }
       a {
+        font-size: calc(0.4rem + 0.4vw);
+        color: $darkIcon;
         text-decoration: underline;
-        font-size: calc(0.5rem + 0.4vw);
+        &:hover {
+          color: black;
+        }
       }
     }
   }
   .search-contact-box {
     position: relative;
-    border: 1px solid green;
-    height: 7%;
-    background-color: lightgrey;
+    height: 5.5%;
+    border: 1px solid #f6f6f6;
+    background-color: #fbfbfb;
+    color: #e0e1e2;
     @include flex(row, center, center);
     input {
-      @include width-height(95%, 85%);
+      @include width-height(97%, 62%);
       padding-left: 15%;
     }
-    .fa-search {
+    i {
       position: absolute;
       left: 6%;
       top: 50%;
@@ -64,14 +72,19 @@ aside {
     }
   }
   ul {
-    height: 77%;
+    background-color: $pureW;
+    height: 76.5%;
     overflow-y: auto;
   }
   li {
     height: 12.5%;
-    border-bottom: 2px solid lightgray;
+    border-bottom: 1px solid $headFootColor;
+    transition: color 0.3s;
     &:last-child {
       border-bottom: 0;
+    }
+    &:hover {
+      background-color: $headFootColor;
     }
   }
 }
@@ -91,6 +104,7 @@ header {
     @include flex(column, space-between, flex-start);
     span:last-child {
       font-size: calc(0.4rem + 0.4vw);
+      color: $darkIcon;
     }
   }
 }
@@ -98,15 +112,14 @@ header {
 // sezione della messaggistica
 header,
 footer {
-  background-color: lightgrey;
-  height: 9%;
+  background-color: $headFootColor;
+  height: 8%;
 }
 
 section {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border: 2px solid green;
 }
 
 .sended-area {
@@ -124,6 +137,10 @@ footer {
   }
   i {
     font-size: calc(0.7rem + 0.8vw);
+    color: $darkIcon;
+    &:hover {
+      color: #000;
+    }
   }
 }
 

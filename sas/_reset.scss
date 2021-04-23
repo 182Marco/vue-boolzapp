@@ -11,10 +11,10 @@ body {
   height: 100vh;
   background-image: linear-gradient(
     to bottom,
-    #32a093 0%,
-    #32a093 15%,
-    #fff 15%,
-    #fff 100%
+    $bg1 0%,
+    $bg1 15%,
+    $bg2 15%,
+    $bg2 100%
   );
   @include media-desk-first(desktop) {
     background-image: none;

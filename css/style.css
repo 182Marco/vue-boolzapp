@@ -49,8 +49,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#32a093), color-stop(15%, #32a093), color-stop(15%, #fff), to(#fff));
-  background-image: linear-gradient(to bottom, #32a093 0%, #32a093 15%, #fff 15%, #fff 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#32a093), color-stop(15%, #32a093), color-stop(15%, #dfe0d8), to(#dfe0d8));
+  background-image: linear-gradient(to bottom, #32a093 0%, #32a093 15%, #dfe0d8 15%, #dfe0d8 100%);
 }
 
 @media screen and (max-width: 900px) {
@@ -99,8 +99,8 @@ ul {
   margin: 1vw;
   font-weight: bold;
   background: transparent;
-  border: 1px solid #6cc7f8;
-  color: #6cc7f8;
+  border: 1px solid #ddfabf;
+  color: #ddfabf;
   border-radius: 7px;
   text-decoration: none;
   cursor: pointer;
@@ -109,7 +109,7 @@ ul {
 }
 
 .btn:hover {
-  background: #6cc7f8;
+  background: #ddfabf;
   color: #fff;
 }
 
@@ -144,13 +144,23 @@ label {
   font-size: calc(1.2rem + 1vw);
 }
 
+i {
+  cursor: pointer;
+  color: #bababa;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+i:hover {
+  color: #777e82;
+}
+
 main {
-  border: 1px solid blue;
   min-width: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 85%;
+  width: 83%;
   height: 95%;
 }
 
@@ -168,12 +178,12 @@ section {
 aside {
   -ms-flex-preferred-size: 37%;
       flex-basis: 37%;
-  border: 2px solid red;
+  border-right: 1px solid #dfe0d8;
 }
 
 aside .active-note-box {
   height: 10%;
-  background-color: lightblue;
+  background-color: #a2dffe;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,7 +209,8 @@ aside .active-note-box i {
   width: 43px;
   height: 43px;
   margin-left: 18px;
-  background-color: #fff;
+  background-color: #f5fcff;
+  color: #a2dffe;
   font-size: calc(0.6rem + 0.7vw);
   border-radius: 50%;
 }
@@ -208,16 +219,26 @@ aside .active-note-box .wrap {
   margin-left: 7px;
 }
 
+aside .active-note-box .wrap p {
+  font-size: calc(0.4rem + 0.5vw);
+}
+
 aside .active-note-box .wrap a {
+  font-size: calc(0.4rem + 0.4vw);
+  color: #777e82;
   text-decoration: underline;
-  font-size: calc(0.5rem + 0.4vw);
+}
+
+aside .active-note-box .wrap a:hover {
+  color: black;
 }
 
 aside .search-contact-box {
   position: relative;
-  border: 1px solid green;
-  height: 7%;
-  background-color: lightgrey;
+  height: 5.5%;
+  border: 1px solid #f6f6f6;
+  background-color: #fbfbfb;
+  color: #e0e1e2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,12 +255,12 @@ aside .search-contact-box {
 }
 
 aside .search-contact-box input {
-  width: 95%;
-  height: 85%;
+  width: 97%;
+  height: 62%;
   padding-left: 15%;
 }
 
-aside .search-contact-box .fa-search {
+aside .search-contact-box i {
   position: absolute;
   left: 6%;
   top: 50%;
@@ -248,17 +269,24 @@ aside .search-contact-box .fa-search {
 }
 
 aside ul {
-  height: 77%;
+  background-color: #fff;
+  height: 76.5%;
   overflow-y: auto;
 }
 
 aside li {
   height: 12.5%;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 1px solid #f4f0ed;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 aside li:last-child {
   border-bottom: 0;
+}
+
+aside li:hover {
+  background-color: #f4f0ed;
 }
 
 header {
@@ -314,12 +342,13 @@ header.dx .wrap {
 
 header.dx .wrap span:last-child {
   font-size: calc(0.4rem + 0.4vw);
+  color: #777e82;
 }
 
 header,
 footer {
-  background-color: lightgrey;
-  height: 9%;
+  background-color: #f4f0ed;
+  height: 8%;
 }
 
 section {
@@ -333,7 +362,6 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 2px solid green;
 }
 
 .sended-area {
@@ -367,6 +395,11 @@ footer input {
 
 footer i {
   font-size: calc(0.7rem + 0.8vw);
+  color: #777e82;
+}
+
+footer i:hover {
+  color: #000;
 }
 
 .account-box {
@@ -393,13 +426,11 @@ footer i {
 
 .sended-area {
   overflow-y: auto;
-  border: 2px solid red;
   padding: 3% 12%;
 }
 
 .sended-area .cont {
   font-size: calc(0.45rem + 0.45vw);
-  border: 1px solid blue;
   height: 12%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,7 +456,7 @@ footer i {
 .sended-area .cont .mes {
   position: relative;
   border-radius: 8px;
-  background-color: lightgreen;
+  background-color: #ddfabf;
   padding: 18px;
   width: 43%;
 }
@@ -435,6 +466,7 @@ footer i {
 }
 
 .sended-area .cont .mes .date {
+  color: #bababa;
   position: absolute;
   bottom: 5%;
   right: 3%;

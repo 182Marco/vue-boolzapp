@@ -18,3 +18,12 @@ span {
 label {
   font-size: calc(1.2rem + 1vw);
 }
+
+i {
+  cursor: pointer;
+  color: $Icon;
+  transition: color 0.3s;
+  &:hover {
+    color: $darkIcon;
+  }
+}

@@ -1,10 +1,8 @@
 .sended-area {
   overflow-y: auto;
-  border: 2px solid red;
   padding: 3% 12%;
   .cont {
     font-size: calc(0.45rem + 0.45vw);
-    border: 1px solid blue;
     height: 12%;
     @include flex(row, flex-start, center);
     &.output {
@@ -13,13 +11,14 @@
     .mes {
       position: relative;
       border-radius: 8px;
-      background-color: lightgreen;
+      background-color: $brand;
       padding: $spaceFromBorder;
       width: 43%;
       &.arrived {
-        background-color: #fff;
+        background-color: $pureW;
       }
       .date {
+        color: $Icon;
         position: absolute;
         bottom: 5%;
         right: 3%;
