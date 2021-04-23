@@ -196,8 +196,8 @@ aside .active-note-box i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 43px;
+  height: 43px;
   margin-left: 18px;
   background-color: #fff;
   font-size: calc(0.6rem + 0.7vw);
@@ -249,6 +249,7 @@ aside .search-contact-box .fa-search {
 
 aside ul {
   height: 77%;
+  overflow-y: auto;
 }
 
 aside li {
@@ -260,7 +261,7 @@ aside li:last-child {
   border-bottom: 0;
 }
 
-header.sx {
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,7 +277,10 @@ header.sx {
           align-items: center;
 }
 
-header.sx .wrap {
+header .wrap-options {
+  width: 100px;
+  padding-right: 18px;
+  font-size: calc(0.6rem + 0.7vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,9 +294,26 @@ header.sx .wrap {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 30%;
-  padding-right: 18px;
-  font-size: calc(0.6rem + 0.7vw);
+}
+
+header.dx .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+header.dx .wrap span:last-child {
+  font-size: calc(0.4rem + 0.4vw);
 }
 
 header,
@@ -344,6 +365,10 @@ footer input {
   height: 75%;
 }
 
+footer i {
+  font-size: calc(0.7rem + 0.8vw);
+}
+
 .account-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,20 +376,69 @@ footer input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: lightyellow;
   width: 100%;
   height: 100%;
 }
 
 .account-box img {
   margin-left: 18px;
-  width: 50px;
+  width: 43px;
   border-radius: 50%;
 }
 
 .account-box span {
   padding-left: 7px;
   display: inline-block;
+}
+
+.sended-area {
+  overflow-y: auto;
+  border: 2px solid red;
+  padding: 3% 12%;
+}
+
+.sended-area .cont {
+  font-size: calc(0.45rem + 0.45vw);
+  border: 1px solid blue;
+  height: 12%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sended-area .cont.output {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.sended-area .cont .mes {
+  position: relative;
+  border-radius: 8px;
+  background-color: lightgreen;
+  padding: 18px;
+  width: 43%;
+}
+
+.sended-area .cont .mes.arrived {
+  background-color: #fff;
+}
+
+.sended-area .cont .mes .date {
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  font-size: calc(0.3rem + 0.3vw);
 }
 
 .err.no-show {

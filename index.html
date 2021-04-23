@@ -21,6 +21,7 @@
   <body>
     <!-- parte app escluso lo sfondo -->
     <main id="app">
+      <!-- ASIDE -->
       <!-- macroarea sx -->
       <aside>
         <!-- intestazione -->
@@ -31,7 +32,7 @@
             <span>Nome Utente</span>
           </a>
           <!-- wrap opzioni su header sx -->
-          <div class="wrap">
+          <div class="wrap-options">
             <i class="fas fa-circle-notch"></i>
             <i class="fas fa-comment-alt"></i>
             <i class="fas fa-ellipsis-v"></i>
@@ -66,12 +67,42 @@
           </li>
         </ul>
       </aside>
+      <!-- ************ -->
       <!-- macroarea dx -->
       <section>
         <!-- intestazione -->
-        <header></header>
+        <header class="dx">
+          <a href="#" class="account-box">
+            <img src="img/avatar_1.jpg" alt="person" />
+            <div class="wrap">
+              <span>Michele</span>
+              <span>Ultimo accesso oggi alle 10:35</span>
+            </div>
+          </a>
+          <!-- wrap delle opzioni su header dx -->
+          <div class="wrap-options">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </header>
         <!-- area sended message -->
-        <div class="sended-area"></div>
+        <div class="sended-area">
+          <!-- contenitore in uscita -->
+          <div class="cont output">
+            <div class="sended mes">
+              Messaggio inviato
+              <div class="date">10/01/2021 15 50 00</div>
+            </div>
+          </div>
+          <!-- contenitore in entrata -->
+          <div class="cont input">
+            <div class="arrived mes">
+              Messaggio ricevuto
+              <div class="date">10/01/2021 15 50 00</div>
+            </div>
+          </div>
+        </div>
         <!-- area per invio (footer) -->
         <footer>
           <i class="far fa-smile"></i>

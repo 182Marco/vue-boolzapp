@@ -35,7 +35,7 @@ aside {
       @include width-height($circlewidth, $circlewidth);
       margin-left: $spaceFromBorder;
       background-color: #fff;
-      font-size: calc(0.6rem + 0.7vw);
+      font-size: $fontSizeUtente;
       border-radius: 50%;
     }
     .wrap {
@@ -65,6 +65,7 @@ aside {
   }
   ul {
     height: 77%;
+    overflow-y: auto;
   }
   li {
     height: 12.5%;
@@ -76,14 +77,21 @@ aside {
 }
 
 // intestazione di aside
-header.sx {
+header {
   @include flex(row, space-between, center);
-  // contenitore icone header a sx
-  .wrap {
-    @include flex(row, space-between, center);
-    width: 30%;
+  // contenitore icone degli header
+  .wrap-options {
+    width: 100px;
     padding-right: $spaceFromBorder;
-    font-size: calc(0.6rem + 0.7vw);
+    font-size: $fontSizeUtente;
+    @include flex(row, space-between, center);
+  }
+  // contenitore icone header a dx
+  &.dx .wrap {
+    @include flex(column, space-between, flex-start);
+    span:last-child {
+      font-size: calc(0.4rem + 0.4vw);
+    }
   }
 }
 
@@ -114,7 +122,11 @@ footer {
     padding: 0 2%;
     @include width-height(77%, 75%);
   }
+  i {
+    font-size: calc(0.7rem + 0.8vw);
+  }
 }
 
 @import 'accounts.scss';
+@import 'areaMessage.scss';
 @import 'jsClasses.scss';
