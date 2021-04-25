@@ -30,7 +30,7 @@
             <!-- account dell'utente -->
             <a href="#" class="account-box">
               <img src="img/avatar_io.jpg" alt="person" />
-              <span>Nome Utente</span>
+              <span :class="{dark : darkmode}">Nome Utente</span>
             </a>
             <!-- wrap opzioni su header sx -->
             <div class="wrap-options">
@@ -76,12 +76,13 @@
             <a href="#" class="account-box">
               <img src="img/avatar_1.jpg" alt="person" />
               <div class="wrap">
-                <span>Michele</span>
+                <span :class="{dark : darkmode}">Michele</span>
                 <span>Ultimo accesso oggi alle 10:35</span>
               </div>
             </a>
             <!-- wrap delle opzioni su header dx -->
             <div class="wrap-options">
+              <i class="fas fa-adjust" @click="darkmode = !darkmode"></i>
               <i class="fas fa-search"></i>
               <i class="fas fa-paperclip"></i>
               <i class="fas fa-ellipsis-v"></i>
@@ -91,23 +92,31 @@
           <div class="sended-area" :class="{dark : darkmode}">
             <!-- contenitore in uscita -->
             <div class="cont output">
-              <div class="sended mes">
+              <div class="sended mes" :class="{dark : darkmode}">
                 Messaggio inviato
-                <div class="date">10/01/2021 15 50 00</div>
+                <div class="date" :class="{dark : darkmode}">
+                  10/01/2021 15 50 00
+                </div>
               </div>
             </div>
             <!-- contenitore in entrata -->
             <div class="cont input">
-              <div class="arrived mes">
+              <div class="arrived mes" :class="{dark : darkmode}">
                 Messaggio ricevuto
-                <div class="date">10/01/2021 15 50 00</div>
+                <div class="date" :class="{dark : darkmode}">
+                  10/01/2021 15 50 00
+                </div>
               </div>
             </div>
           </div>
           <!-- area per invio (footer) -->
           <footer :class="{dark : darkmode}">
             <i class="far fa-smile"></i>
-            <input type="text" placeholder="Scrivi un messaggio" />
+            <input
+              type="text"
+              :class="{dark : darkmode}"
+              placeholder="Scrivi un messaggio"
+            />
             <i class="fas fa-microphone"></i>
           </footer>
         </section>

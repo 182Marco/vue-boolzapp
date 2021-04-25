@@ -1,29 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-.flex-xy-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.margin-auto {
-  margin: 0 auto;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 900px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -87,8 +62,8 @@ body > div {
 }
 
 body > div.dark {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1a534c), color-stop(15%, #1a534c), color-stop(15%, rgba(0, 0, 0, 0.92)), to(rgba(0, 0, 0, 0.92)));
-  background-image: linear-gradient(to bottom, #1a534c 0%, #1a534c 15%, rgba(0, 0, 0, 0.92) 15%, rgba(0, 0, 0, 0.92) 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#103530), color-stop(15%, #103530), color-stop(15%, #000), to(#000));
+  background-image: linear-gradient(to bottom, #103530 0%, #103530 15%, #000 15%, #000 100%);
 }
 
 @media screen and (max-width: 930px) {
@@ -267,7 +242,7 @@ aside .active-note-box .wrap a {
 }
 
 aside .active-note-box .wrap a:hover {
-  color: black;
+  color: #000;
 }
 
 aside .active-note-box .wrap a.dark {
@@ -412,6 +387,14 @@ header.dx .wrap span:last-child {
   color: #777e82;
 }
 
+header.sx .wrap-options {
+  min-width: 90px;
+}
+
+header.dx .wrap-options {
+  min-width: 120px;
+}
+
 header,
 footer {
   background-color: #f4f0ed;
@@ -420,7 +403,7 @@ footer {
 
 header.dark,
 footer.dark {
-  background-color: #0d0e12;
+  background-color: #191919;
 }
 
 section {
@@ -458,6 +441,11 @@ footer input {
   height: 75%;
 }
 
+footer input.dark {
+  background-color: #2e2f33;
+  color: #a8a9ab;
+}
+
 footer i {
   font-size: calc(0.7rem + 0.8vw);
   color: #777e82;
@@ -484,9 +472,17 @@ footer i:hover {
   border-radius: 50%;
 }
 
+.account-box a.dark {
+  color: #a8a9ab;
+}
+
 .account-box span {
   padding-left: 7px;
   display: inline-block;
+}
+
+.account-box span.dark {
+  color: #a8a9ab;
 }
 
 .sended-area {
@@ -534,8 +530,16 @@ footer i:hover {
   width: 43%;
 }
 
+.sended-area .cont .mes.dark {
+  background-color: #6f904b;
+}
+
 .sended-area .cont .mes.arrived {
   background-color: #fff;
+}
+
+.sended-area .cont .mes.arrived.dark {
+  background-color: #a8a9ab;
 }
 
 .sended-area .cont .mes .date {
@@ -546,11 +550,7 @@ footer i:hover {
   font-size: calc(0.3rem + 0.3vw);
 }
 
-.err.no-show {
-  display: none;
-}
-
-.done {
-  text-decoration: line-through;
+.sended-area .cont .mes .date.dark {
+  color: #000;
 }
 /*# sourceMappingURL=style.css.map */

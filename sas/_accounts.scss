@@ -7,8 +7,15 @@
     width: $circlewidth;
     border-radius: 50%;
   }
+  a.dark {
+    color: $txtColorInDark1;
+  }
   span {
     padding-left: $spaceFromImg;
     display: inline-block;
+    &.dark {
+      // colori in dark mode {
+      color: $txtColorInDark1;
+    }
   }
 }

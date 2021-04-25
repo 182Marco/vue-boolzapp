@@ -20,8 +20,15 @@
       background-color: $brand;
       padding: $spaceFromBorder;
       width: 43%;
+      // colori del dark
+      &.dark {
+        background-color: $darkArrived;
+      }
       &.arrived {
         background-color: $pureW;
+        &.dark {
+          background-color: $txtColorInDark1;
+        }
       }
       .date {
         color: $Icon;
@@ -29,6 +36,10 @@
         bottom: 5%;
         right: 3%;
         font-size: calc(0.3rem + 0.3vw);
+        // colori del dark
+        &.dark {
+          color: $black;
+        }
       }
     }
   }

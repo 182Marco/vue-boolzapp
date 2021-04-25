@@ -38,8 +38,8 @@ body > div {
       to bottom,
       $darkfondale1 0%,
       $darkfondale1 15%,
-      $darkfondale2 15%,
-      $darkfondale2 100%
+      $black 15%,
+      $black 100%
     );
   }
   @include media-desk-first(desktop) {
