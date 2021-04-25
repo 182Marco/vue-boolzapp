@@ -9,17 +9,9 @@
 body {
   @include flex(row, center, center);
   height: 100vh;
-  background-image: linear-gradient(
-    to bottom,
-    $bg1 0%,
-    $bg1 15%,
-    $bg2 15%,
-    $bg2 100%
-  );
   @include media-desk-first(desktop) {
     background-image: none;
     background-color: $darkBg;
-    flex-direction: column;
     &::before {
       padding: 0 4%;
       color: $semiLightTxt;
@@ -28,6 +20,30 @@ body {
       font-weight: bold;
       font-size: (8vw);
     }
+  }
+}
+body > div {
+  @include width-height(100%, 100%);
+  @include flex(row, center, center);
+  background-image: linear-gradient(
+    to bottom,
+    $bg1 0%,
+    $bg1 15%,
+    $bg2 15%,
+    $bg2 100%
+  );
+  // colori in dark mode
+  &.dark {
+    background-image: linear-gradient(
+      to bottom,
+      $darkfondale1 0%,
+      $darkfondale1 15%,
+      $darkfondale2 15%,
+      $darkfondale2 100%
+    );
+  }
+  @include media-desk-first(desktop) {
+    display: none;
   }
 }
 

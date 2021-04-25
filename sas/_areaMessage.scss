@@ -1,6 +1,12 @@
 .sended-area {
   overflow-y: auto;
   padding: 3% 12%;
+  flex-grow: 1;
+  background-image: url(../img/mine.jpg);
+  // colori in dark mode
+  &.dark {
+    background-image: url(../img/mineDark.jpg);
+  }
   .cont {
     font-size: calc(0.45rem + 0.45vw);
     height: 12%;

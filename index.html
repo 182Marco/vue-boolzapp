@@ -19,92 +19,100 @@
     <title>Boolzapp</title>
   </head>
   <body>
-    <!-- parte app escluso lo sfondo -->
-    <main id="app">
-      <!-- ASIDE -->
-      <!-- macroarea sx -->
-      <aside>
-        <!-- intestazione -->
-        <header class="sx">
-          <!-- account dell'utente -->
-          <a href="#" class="account-box">
-            <img src="img/avatar_io.jpg" alt="person" />
-            <span>Nome Utente</span>
-          </a>
-          <!-- wrap opzioni su header sx -->
-          <div class="wrap-options">
-            <i class="fas fa-circle-notch"></i>
-            <i class="fas fa-comment-alt"></i>
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-        </header>
-        <!-- reattangolo vuoi ricevere notifiche -->
-        <div class="active-note-box">
-          <i class="fas fa-bell-slash"></i>
-          <div class="wrap">
-            <p>Ricevi le notifiche di nuovi messaggi</p>
-            <a href="#">Attiva notifiche desktop</a>
-          </div>
-        </div>
-        <!-- ricerca chat -->
-        <div class="search-contact-box">
-          <i class="fas fa-search"></i>
-          <input type="text" placeholder="Cerca o inizia una nova chat" />
-        </div>
-        <!-- comincia lista delle chat -->
-        <ul>
-          <li v-for="user in users">
+    <div id="app" :class="{dark : darkmode}">
+      <!-- parte app escluso lo sfondo -->
+      <main :class="{dark : darkmode}">
+        <!-- ASIDE -->
+        <!-- macroarea sx -->
+        <aside :class="{dark : darkmode}">
+          <!-- intestazione -->
+          <header class="sx" :class="{dark : darkmode}">
+            <!-- account dell'utente -->
             <a href="#" class="account-box">
-              <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
-              <span>{{user.name}}</span>
+              <img src="img/avatar_io.jpg" alt="person" />
+              <span>Nome Utente</span>
             </a>
-          </li>
-        </ul>
-      </aside>
-      <!-- ************ -->
-      <!-- macroarea dx -->
-      <section>
-        <!-- intestazione -->
-        <header class="dx">
-          <a href="#" class="account-box">
-            <img src="img/avatar_1.jpg" alt="person" />
+            <!-- wrap opzioni su header sx -->
+            <div class="wrap-options">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </header>
+          <!-- reattangolo vuoi ricevere notifiche -->
+          <div class="active-note-box" :class="{dark : darkmode}">
+            <i class="fas fa-bell-slash" :class="{dark : darkmode}"></i>
             <div class="wrap">
-              <span>Michele</span>
-              <span>Ultimo accesso oggi alle 10:35</span>
+              <p>Ricevi le notifiche di nuovi messaggi</p>
+              <a href="#" :class="{dark : darkmode}"
+                >Attiva notifiche desktop</a
+              >
             </div>
-          </a>
-          <!-- wrap delle opzioni su header dx -->
-          <div class="wrap-options">
+          </div>
+          <!-- ricerca chat -->
+          <div class="search-contact-box" :class="{dark : darkmode}">
             <i class="fas fa-search"></i>
-            <i class="fas fa-paperclip"></i>
-            <i class="fas fa-ellipsis-v"></i>
+            <input
+              type="text"
+              placeholder="Cerca o inizia una nova chat"
+              :class="{dark : darkmode}"
+            />
           </div>
-        </header>
-        <!-- area sended message -->
-        <div class="sended-area">
-          <!-- contenitore in uscita -->
-          <div class="cont output">
-            <div class="sended mes">
-              Messaggio inviato
-              <div class="date">10/01/2021 15 50 00</div>
+          <!-- comincia lista delle chat -->
+          <ul :class="{dark : darkmode}">
+            <li v-for="user in users" :class="{dark : darkmode}">
+              <a href="#" class="account-box">
+                <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
+                <span :class="{dark : darkmode}">{{user.name}}</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <!-- ************ -->
+        <!-- macroarea dx -->
+        <section>
+          <!-- intestazione -->
+          <header class="dx" :class="{dark : darkmode}">
+            <a href="#" class="account-box">
+              <img src="img/avatar_1.jpg" alt="person" />
+              <div class="wrap">
+                <span>Michele</span>
+                <span>Ultimo accesso oggi alle 10:35</span>
+              </div>
+            </a>
+            <!-- wrap delle opzioni su header dx -->
+            <div class="wrap-options">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </header>
+          <!-- area sended message -->
+          <div class="sended-area" :class="{dark : darkmode}">
+            <!-- contenitore in uscita -->
+            <div class="cont output">
+              <div class="sended mes">
+                Messaggio inviato
+                <div class="date">10/01/2021 15 50 00</div>
+              </div>
+            </div>
+            <!-- contenitore in entrata -->
+            <div class="cont input">
+              <div class="arrived mes">
+                Messaggio ricevuto
+                <div class="date">10/01/2021 15 50 00</div>
+              </div>
             </div>
           </div>
-          <!-- contenitore in entrata -->
-          <div class="cont input">
-            <div class="arrived mes">
-              Messaggio ricevuto
-              <div class="date">10/01/2021 15 50 00</div>
-            </div>
-          </div>
-        </div>
-        <!-- area per invio (footer) -->
-        <footer>
-          <i class="far fa-smile"></i>
-          <input type="text" placeholder="Scrivi un messaggio" />
-          <i class="fas fa-microphone"></i>
-        </footer>
-      </section>
-    </main>
+          <!-- area per invio (footer) -->
+          <footer :class="{dark : darkmode}">
+            <i class="far fa-smile"></i>
+            <input type="text" placeholder="Scrivi un messaggio" />
+            <i class="fas fa-microphone"></i>
+          </footer>
+        </section>
+      </main>
+    </div>
     <!-- main js -->
     <script src="main.js" charset="utf-8"></script>
   </body>

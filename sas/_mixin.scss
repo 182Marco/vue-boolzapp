@@ -84,7 +84,7 @@
       @content;
     }
   } @else if $breakpoint == desktop {
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 930px) {
       @content;
     }
   } @else if $breakpoint == full-desktop {
