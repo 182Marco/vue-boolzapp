@@ -109,6 +109,7 @@ const app = new Vue({
     cleanInputMsg() {
       this.newMsg = '';
     },
+    // risposta automatizzata BOT
     risp() {
       const date = this.getDateMsg();
       this.users[this.idChat].messages.push({
