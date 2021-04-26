@@ -87,21 +87,22 @@ const app = new Vue({
       },
     ],
     darkmode: false,
+    idChat: 0,
+    sended: [],
   },
   watch: {
-    x() {
-      this.a(), this.b();
+    idChat() {
+      console.log(this.idChat);
     },
   },
   mounted() {
-    this.a();
+    this.filterSend();
   },
   methods: {
-    a(i) {
-      console.log(`ciao`);
+    filterSend() {
+      console.log(`bau`);
+      this.sended = this.users.messages.filter((e) => e.satus == `sent`);
+      console.log(sended);
     },
-    b(i) {},
-
-    c(i) {},
   },
 });

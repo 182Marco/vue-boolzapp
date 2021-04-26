@@ -1,6 +1,6 @@
 .sended-area {
   overflow-y: auto;
-  padding: 3% 12%;
+  padding: 0% 12%;
   flex-grow: 1;
   background-image: url(../img/mine.webp);
   // colori in dark mode
@@ -8,6 +8,7 @@
     background-image: url(../img/mineDark.webp);
   }
   .cont {
+    padding-top: 10%;
     font-size: calc(0.45rem + 0.45vw);
     height: 12%;
     @include flex(row, flex-start, center);

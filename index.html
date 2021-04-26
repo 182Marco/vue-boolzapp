@@ -64,6 +64,7 @@
               v-for="(user, i ) in users"
               :class="{dark : darkmode}"
               :key="`i-${user.avatar}`"
+              @click="idChat = i"
             >
               <a href="#" class="account-box">
                 <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
@@ -93,22 +94,29 @@
             </div>
           </header>
           <!-- area sended message -->
-          <div class="sended-area" :class="{dark : darkmode}">
-            <!-- contenitore in uscita -->
-            <div class="cont output">
-              <div class="sended mes" :class="{dark : darkmode}">
-                Messaggio inviato
-                <div class="date" :class="{dark : darkmode}">
-                  10/01/2021 15 50 00
+          <div
+            v-for="(user, i ) in users"
+            class="sended-area"
+            :class="{dark : darkmode}"
+            v-show="users[i] == users[idChat]"
+          >
+            <div v-for="message in users[i].messages">
+              <!-- contenitore in uscita -->
+              <div class="cont output">
+                <div class="sended mes" :class="{dark : darkmode}">
+                  {{message.message}}
+                  <div class="date" :class="{dark : darkmode}">
+                    10/01/2021 15 50 00
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- contenitore in entrata -->
-            <div class="cont input">
-              <div class="arrived mes" :class="{dark : darkmode}">
-                Messaggio ricevuto
-                <div class="date" :class="{dark : darkmode}">
-                  10/01/2021 15 50 00
+              <!-- contenitore in entrata -->
+              <div class="cont input">
+                <div class="arrived mes" :class="{dark : darkmode}">
+                  {{message.message}}
+                  <div class="date" :class="{dark : darkmode}">
+                    10/01/2021 15 50 00
+                  </div>
                 </div>
               </div>
             </div>
