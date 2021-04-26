@@ -3,44 +3,47 @@
   padding: 0% 12%;
   flex-grow: 1;
   background-image: url(../img/mine.webp);
+  ul {
+    display: flex;
+    direction: column;
+  }
   // colori in dark mode
   &.dark {
     background-image: url(../img/mineDark.webp);
+    background-size: 410px;
   }
-  .cont {
-    padding-top: 10%;
-    font-size: calc(0.45rem + 0.45vw);
-    height: 12%;
-    @include flex(row, flex-start, center);
-    &.output {
-      justify-content: flex-end;
+
+  &.output {
+    justify-content: flex-end;
+  }
+  .mes {
+    position: relative;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: $spaceFromBorder;
+    max-width: 80%;
+    margin-top: 12px;
+    // colori del dark
+    &.dark {
+      background-color: $darkArrived;
+      color: #fff;
     }
-    .mes {
-      position: relative;
-      border-radius: 8px;
+    &.sent {
       background-color: $brand;
-      padding: $spaceFromBorder;
-      width: 43%;
+      margin-left: auto;
+      &.dark {
+        background-color: $darkSent;
+      }
+    }
+    .date {
+      color: $Icon;
+      position: absolute;
+      bottom: 5%;
+      right: 3%;
+      font-size: calc(0.3rem + 0.3vw);
       // colori del dark
       &.dark {
-        background-color: $darkArrived;
-      }
-      &.arrived {
-        background-color: $pureW;
-        &.dark {
-          background-color: $txtColorInDark1;
-        }
-      }
-      .date {
-        color: $Icon;
-        position: absolute;
-        bottom: 5%;
-        right: 3%;
-        font-size: calc(0.3rem + 0.3vw);
-        // colori del dark
-        &.dark {
-          color: $black;
-        }
+        color: #fff;
       }
     }
   }

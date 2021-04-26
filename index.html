@@ -100,26 +100,21 @@
             :class="{dark : darkmode}"
             v-show="users[i] == users[idChat]"
           >
-            <div v-for="message in users[i].messages">
+            <ul v-for="message in users[i].messages">
               <!-- contenitore in uscita -->
-              <div class="cont output">
-                <div class="sended mes" :class="{dark : darkmode}">
-                  {{message.message}}
-                  <div class="date" :class="{dark : darkmode}">
-                    10/01/2021 15 50 00
-                  </div>
+              <li
+                class="mes"
+                :class="{
+                  sent : message.status == 'sent',
+                  dark : darkmode
+                }"
+              >
+                {{message.message}}
+                <div class="date" :class="{dark : darkmode}">
+                  {{message.date}}
                 </div>
-              </div>
-              <!-- contenitore in entrata -->
-              <div class="cont input">
-                <div class="arrived mes" :class="{dark : darkmode}">
-                  {{message.message}}
-                  <div class="date" :class="{dark : darkmode}">
-                    10/01/2021 15 50 00
-                  </div>
-                </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
           <!-- area per invio (footer) -->
           <footer :class="{dark : darkmode}">
