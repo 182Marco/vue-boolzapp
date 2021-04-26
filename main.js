@@ -89,10 +89,15 @@ const app = new Vue({
     darkmode: false,
     idChat: 0,
     newMsg: ``,
+    searchUser: ``,
+    a: true,
   },
   watch: {
     idChat() {
       console.log(this.idChat);
+    },
+    searchUser() {
+      console.log(this.searchUser);
     },
   },
   mounted() {},
@@ -124,7 +129,6 @@ const app = new Vue({
     getDateMsg() {
       // ottenere data ora della scrittuta Msg
       const d = new Date();
-      let g = d.getDate();
       let arNumMesi = [
         `01`,
         `02`,
@@ -139,6 +143,7 @@ const app = new Vue({
         `11`,
         `12`,
       ];
+      let g = d.getDate();
       let m = arNumMesi[d.getMonth()];
       let y = d.getFullYear();
       let ore = d.getHours();
@@ -149,5 +154,6 @@ const app = new Vue({
       min = min < 10 ? (min = `0${min}`) : min;
       return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
     },
+    // pulire input msg dopo invio
   },
 });
