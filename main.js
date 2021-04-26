@@ -129,29 +129,17 @@ const app = new Vue({
     getDateMsg() {
       // ottenere data ora della scrittuta Msg
       const d = new Date();
-      let arNumMesi = [
-        `01`,
-        `02`,
-        `03`,
-        `04`,
-        `05`,
-        `06`,
-        `07`,
-        `08`,
-        `09`,
-        `10`,
-        `11`,
-        `12`,
-      ];
       let g = d.getDate();
-      let m = arNumMesi[d.getMonth()];
+      let m = d.getMonth();
+      m++;
+      // let m = parseInt(d.getMonth())++;
       let y = d.getFullYear();
       let ore = d.getHours();
       let min = d.getMinutes();
       let sec = d.getSeconds();
-      ore = ore < 10 ? (ore = `0${ore}`) : ore;
-      sec = sec < 10 ? (sec = `0${sec}`) : sec;
-      min = min < 10 ? (min = `0${min}`) : min;
+      ore == ore < 10 ? (ore = `0${ore}`) : ore;
+      sec == sec < 10 ? (sec = `0${sec}`) : sec;
+      min == min < 10 ? (min = `0${min}`) : min;
       return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
     },
     // pulire input msg dopo invio
