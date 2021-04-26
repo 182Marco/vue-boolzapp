@@ -123,6 +123,9 @@
               type="text"
               :class="{dark : darkmode}"
               placeholder="Scrivi un messaggio"
+              @keyup.enter="writeMsg"
+              v-model="newMsg"
+              ref="inputMsg"
             />
             <i class="fas fa-microphone"></i>
           </footer>

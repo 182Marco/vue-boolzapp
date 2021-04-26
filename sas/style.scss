@@ -159,7 +159,7 @@ header.dx .wrap-options {
 header,
 footer {
   background-color: $headFootColor;
-  height: 8%;
+  min-height: 8%;
   // colori in dark mode
   &.dark {
     background-color: $bgDark1;

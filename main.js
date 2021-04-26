@@ -88,21 +88,57 @@ const app = new Vue({
     ],
     darkmode: false,
     idChat: 0,
-    sended: [],
+    newMsg: ``,
   },
   watch: {
     idChat() {
       console.log(this.idChat);
     },
   },
-  mounted() {
-    this.filterSend();
-  },
+  mounted() {},
   methods: {
-    filterSend() {
-      console.log(`bau`);
-      this.sended = this.users.messages.filter((e) => e.satus == `sent`);
-      console.log(sended);
+    writeMsg() {
+      if (this.newMsg != '') {
+        const date = this.getDateMsg();
+        this.users[this.idChat].messages.push({
+          date: date,
+          message: this.newMsg,
+          status: 'sent',
+        });
+        this.cleanInputMsg();
+      }
+    },
+    // pulire input msg dopo invio
+    cleanInputMsg() {
+      this.newMsg = '';
+    },
+    getDateMsg() {
+      // ottenere data ora della scrittuta Msg
+      const d = new Date();
+      let g = d.getDate();
+      let arNumMesi = [
+        `01`,
+        `02`,
+        `03`,
+        `04`,
+        `05`,
+        `06`,
+        `07`,
+        `08`,
+        `09`,
+        `10`,
+        `11`,
+        `12`,
+      ];
+      let m = arNumMesi[d.getMonth()];
+      let y = d.getFullYear();
+      let ore = d.getHours();
+      let min = d.getMinutes();
+      let sec = d.getSeconds();
+      ore = ore < 10 ? (ore = `0${ore}`) : ore;
+      sec = sec < 10 ? (sec = `0${sec}`) : sec;
+      min = min < 10 ? (min = `0${min}`) : min;
+      return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
     },
   },
 });

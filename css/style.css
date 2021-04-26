@@ -394,7 +394,7 @@ header.dx .wrap-options {
 header,
 footer {
   background-color: #f4f0ed;
-  height: 8%;
+  min-height: 8%;
 }
 
 header.dark,
@@ -513,6 +513,7 @@ footer i:hover {
   border-radius: 8px;
   background-color: #fff;
   padding: 18px;
+  min-width: 30%;
   max-width: 80%;
   margin-top: 12px;
 }
