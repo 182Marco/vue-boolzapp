@@ -491,11 +491,11 @@ footer i:hover {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  background-image: url(../img/mine.jpg);
+  background-image: url(../img/mine.webp);
 }
 
 .sended-area.dark {
-  background-image: url(../img/mineDark.jpg);
+  background-image: url(../img/mineDark.webp);
 }
 
 .sended-area .cont {
@@ -531,7 +531,7 @@ footer i:hover {
 }
 
 .sended-area .cont .mes.dark {
-  background-color: #6f904b;
+  background-color: #588d20;
 }
 
 .sended-area .cont .mes.arrived {

@@ -60,7 +60,11 @@
           </div>
           <!-- comincia lista delle chat -->
           <ul :class="{dark : darkmode}">
-            <li v-for="user in users" :class="{dark : darkmode}">
+            <li
+              v-for="(user, i ) in users"
+              :class="{dark : darkmode}"
+              :key="`i-${user.avatar}`"
+            >
               <a href="#" class="account-box">
                 <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
                 <span :class="{dark : darkmode}">{{user.name}}</span>

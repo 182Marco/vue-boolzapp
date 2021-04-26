@@ -86,7 +86,7 @@ const app = new Vue({
         ],
       },
     ],
-    darkmode: true,
+    darkmode: false,
   },
   watch: {
     x() {
