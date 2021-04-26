@@ -188,6 +188,13 @@ footer {
   i {
     font-size: calc(0.7rem + 0.8vw);
     color: $darkIcon;
+    // &.fa-telegram-plane {
+    //   color: #fff;
+    //   background-color: $darkIcon;
+    //   &:hover {
+    //     background-color: $black;
+    //     color: white;
+    //   }
     &:hover {
       color: $black;
     }

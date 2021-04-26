@@ -136,7 +136,12 @@
               v-model="newMsg"
               ref="inputMsg"
             />
-            <i class="fas fa-microphone"></i>
+            <i v-show=" newMsg == ''" class="fas fa-microphone"></i>
+            <i
+              v-show=" newMsg != ''"
+              @click="writeMsg"
+              class="fab fa-telegram-plane"
+            ></i>
           </footer>
         </section>
       </main>
