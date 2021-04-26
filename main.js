@@ -90,7 +90,6 @@ const app = new Vue({
     idChat: 0,
     newMsg: ``,
     searchUser: ``,
-    a: true,
   },
   methods: {
     writeMsg() {
