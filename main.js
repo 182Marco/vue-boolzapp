@@ -106,11 +106,20 @@ const app = new Vue({
           status: 'sent',
         });
         this.cleanInputMsg();
+        setTimeout(this.risp, 3000);
       }
     },
     // pulire input msg dopo invio
     cleanInputMsg() {
       this.newMsg = '';
+    },
+    risp() {
+      const date = this.getDateMsg();
+      this.users[this.idChat].messages.push({
+        date: date,
+        message: 'ok!',
+        status: 'received',
+      });
     },
     getDateMsg() {
       // ottenere data ora della scrittuta Msg
