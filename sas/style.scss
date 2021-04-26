@@ -71,11 +71,10 @@ aside {
   .search-contact-box {
     position: relative;
     height: 5.5%;
-    background-color: #fbfbfb;
+    background-color: $bg3;
     // colori in dark mode
     &.dark {
-      background-color: $bgDark2;
-      color: $txtColorInDark1;
+      background-color: rgb(31, 31, 31);
     }
     @include flex(row, center, center);
     input {
@@ -158,7 +157,7 @@ header.dx .wrap-options {
 // sezione della messaggistica
 header,
 footer {
-  background-color: $headFootColor;
+  background-color: $bg3;
   min-height: 8%;
   // colori in dark mode
   &.dark {

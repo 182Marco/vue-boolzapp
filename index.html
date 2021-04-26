@@ -102,28 +102,31 @@
             </div>
           </header>
           <!-- area sended message -->
-          <div
-            v-for="(user, i ) in users"
-            :key="`i-${user.avatar}`"
-            class="sended-area"
-            :class="{dark : darkmode}"
-            v-show="users[i] == users[idChat]"
-          >
-            <ul v-for="message in users[i].messages">
-              <!-- contenitore in uscita -->
-              <li
-                class="mes"
-                :class="{
+          <div class="sended-area">
+            <div
+              v-for="(user, i ) in users"
+              :key="`i-${user.avatar}`"
+              class="sended-area-box"
+              :class="{dark : darkmode}"
+              v-show="users[i] == users[idChat]"
+            >
+              <ul>
+                <!-- contenitore in uscita -->
+                <li
+                  class="mes"
+                  v-for="message in users[i].messages"
+                  :class="{
                   sent : message.status == 'sent',
                   dark : darkmode
                 }"
-              >
-                {{message.message}}
-                <div class="date" :class="{dark : darkmode}">
-                  {{message.date}}
-                </div>
-              </li>
-            </ul>
+                >
+                  {{message.message}}
+                  <div class="date" :class="{dark : darkmode}">
+                    {{message.date}}
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
           <!-- area per invio (footer) -->
           <footer :class="{dark : darkmode}">
