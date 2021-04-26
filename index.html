@@ -63,8 +63,8 @@
           <ul :class="{dark : darkmode}">
             <li
               v-for="(user, i ) in users"
-              :class="{dark : darkmode}"
               :key="`i-${user.avatar}`"
+              :class="{dark : darkmode}"
               @click="idChat = i"
               v-show="users[i].name.toLowerCase().includes(searchUser.toLowerCase())"
             >
@@ -80,11 +80,17 @@
         <section>
           <!-- intestazione -->
           <header class="dx" :class="{dark : darkmode}">
-            <a href="#" class="account-box">
-              <img src="img/avatar_1.jpg" alt="person" />
+            <a
+              v-for="(user, i) in users"
+              :key="`i-${user.avatar}`"
+              v-show="users[i] == users[idChat]"
+              href="#"
+              class="account-box"
+            >
+              <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
               <div class="wrap">
-                <span :class="{dark : darkmode}">Michele</span>
-                <span>Ultimo accesso oggi alle 10:35</span>
+                <span :class="{dark : darkmode}">{{user.name}}</span>
+                <span>{{user.messages[user.messages.length -1].date}}</span>
               </div>
             </a>
             <!-- wrap delle opzioni su header dx -->
@@ -98,6 +104,7 @@
           <!-- area sended message -->
           <div
             v-for="(user, i ) in users"
+            :key="`i-${user.avatar}`"
             class="sended-area"
             :class="{dark : darkmode}"
             v-show="users[i] == users[idChat]"

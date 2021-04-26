@@ -92,15 +92,6 @@ const app = new Vue({
     searchUser: ``,
     a: true,
   },
-  watch: {
-    idChat() {
-      console.log(this.idChat);
-    },
-    searchUser() {
-      console.log(this.searchUser);
-    },
-  },
-  mounted() {},
   methods: {
     writeMsg() {
       if (this.newMsg != '') {
@@ -132,7 +123,6 @@ const app = new Vue({
       let g = d.getDate();
       let m = d.getMonth();
       m++;
-      // let m = parseInt(d.getMonth())++;
       let y = d.getFullYear();
       let ore = d.getHours();
       let min = d.getMinutes();
@@ -142,6 +132,5 @@ const app = new Vue({
       min == min < 10 ? (min = `0${min}`) : min;
       return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
     },
-    // pulire input msg dopo invio
   },
 });
