@@ -29,6 +29,9 @@ header {
     @include flex(row, space-between, center);
     i.active {
       color: $txtColorInDark2;
+      &.dark {
+        color: #fff;
+      }
     }
   }
   // contenitore icone header a dx
@@ -87,7 +90,7 @@ header {
 header,
 footer {
   background-color: $bg3;
-  min-height: 8%;
+  min-height: 9%;
   // colori in dark mode
   &.dark {
     background-color: $bgDark1;

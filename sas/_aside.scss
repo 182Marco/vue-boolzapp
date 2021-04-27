@@ -74,12 +74,18 @@ aside {
   }
   ul {
     background-color: $pureW;
-    height: 76.5%;
+    height: 77.5%;
     overflow-y: auto;
     // colori in dark mode
     &.dark {
       background-color: $bgDark2;
       color: $txtColorInDark1;
+    }
+    /* togliere bg e bordi da emoji nel
+     cambiamento testi dell'account */
+    &.emoticon-box li {
+      background-color: transparent;
+      border-color: transparent;
     }
   }
   li {

@@ -215,6 +215,10 @@ header .wrap-options i.active {
   color: #59585d;
 }
 
+header .wrap-options i.active.dark {
+  color: #fff;
+}
+
 header.dx .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -287,7 +291,7 @@ header.sx .account-txt-box .userThoughtsEl.dark {
 header,
 footer {
   background-color: #f1eeee;
-  min-height: 8%;
+  min-height: 9%;
 }
 
 header.dark,
@@ -427,13 +431,20 @@ aside .input-box i {
 
 aside ul {
   background-color: #fff;
-  height: 76.5%;
+  height: 77.5%;
   overflow-y: auto;
+  /* togliere bg e bordi da emoji nel
+     cambiamento testi dell'account */
 }
 
 aside ul.dark {
   background-color: #2e2f33;
   color: #a8a9ab;
+}
+
+aside ul.emoticon-box li {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 aside li {

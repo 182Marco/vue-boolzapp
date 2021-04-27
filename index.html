@@ -49,17 +49,21 @@
             <!-- wrap opzioni su header sx -->
             <div class="wrap-options">
               <i class="fas fa-circle-notch" @click="onLine = ! onLine"></i>
-              <!-- icona Per modifica nome profilo -->
+              <!-- icona per modifica nome profilo -->
               <i
                 class="fas fa-pencil-alt"
-                :class="{active : changeProfName}"
+                :class="{active : changeProfName,
+                         dark : darkmode
+                        }"
                 @click="userThoughtsBox = !userThoughtsBox;
                 changeProfName = !changeProfName"
               ></i>
               <!-- icona per inserimento frase presentaizone profilo -->
               <i
                 class="fas fa-comment-alt"
-                :class="{active : thoughtsActive}"
+                :class="{active : thoughtsActive,
+                         dark : darkmode
+                        }"
                 @click="userThoughtsBox = !userThoughtsBox;
                   thoughtsActive = !thoughtsActive"
               >
