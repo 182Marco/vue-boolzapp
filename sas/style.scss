@@ -13,13 +13,11 @@ main {
     display: none;
   }
 }
-
 // lista account
 aside,
 section {
   height: 100%;
 }
-
 // intestazione di aside
 header {
   @include flex(row, space-between, center);
@@ -39,7 +37,6 @@ header {
     }
   }
 }
-
 // contenitore delle icone opzioni nell'header a sx
 header.sx .wrap-options {
   min-width: 90px;
@@ -48,7 +45,6 @@ header.sx .wrap-options {
 header.dx .wrap-options {
   min-width: 120px;
 }
-
 // sezione della messaggistica
 header,
 footer {
