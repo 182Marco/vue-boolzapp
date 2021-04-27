@@ -83,6 +83,7 @@ aside {
     }
   }
   li {
+    position: relative;
     height: 12.5%;
     border-bottom: 1px solid $headFootColor;
     transition: color 0.3s;

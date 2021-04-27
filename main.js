@@ -176,11 +176,12 @@ const app = new Vue({
     /* push obj con msg e chiamata 
     funzioni per ottenere proprietà ulteriori*/
     writeMsg() {
-      if (this.newMsg != '') {
+      if (this.newMsg.trim() != '') {
         const date = this.getDateMsg();
         this.users[this.idChat].messages.push({
           date: date,
-          message: this.newMsg,
+          // nota interssante: (anche senza trim vue fa output timmato)
+          message: this.newMsg.trim(),
           status: 'sent',
         });
         this.cleanInputMsg();

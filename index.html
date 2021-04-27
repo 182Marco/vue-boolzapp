@@ -64,7 +64,9 @@
             <li
               v-for="(user, i ) in users"
               :key="`i-${user.avatar}`"
-              :class="{dark : darkmode}"
+              :class="{dark : darkmode,
+                       active: idChat == i
+                      }"
               @click="idChat = i"
               v-show="users[i].name.toLowerCase().includes(searchUser.toLowerCase())"
             >
@@ -109,7 +111,6 @@
             :class="{dark : darkmode}"
             v-show="users[i] == users[idChat]"
           >
-            <!-- contenitore in uscita -->
             <li
               class="mes"
               v-for="(message, i) in users[i].messages"

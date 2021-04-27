@@ -19,3 +19,17 @@
     }
   }
 }
+
+/* classe active portata da js su 
+conversazione attualmente selezionata*/
+.active::after {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  content: '';
+  border-radius: 50%;
+  background-color: $bg1;
+  @include width-height(7px, 7px);
+}
