@@ -102,35 +102,43 @@
             </div>
           </header>
           <!-- area sended message -->
-          <div class="sended-area">
-            <div
-              v-for="(user, i ) in users"
-              :key="`i-${user.avatar}`"
-              class="sended-area-box"
-              :class="{dark : darkmode}"
-              v-show="users[i] == users[idChat]"
-            >
-              <ul>
-                <!-- contenitore in uscita -->
-                <li
-                  class="mes"
-                  v-for="message in users[i].messages"
-                  :class="{
+          <ul
+            v-for="(user, i ) in users"
+            :key="`i-${user.avatar}`"
+            class="sended-area"
+            :class="{dark : darkmode}"
+            v-show="users[i] == users[idChat]"
+          >
+            <!-- contenitore in uscita -->
+            <li
+              class="mes"
+              v-for="(message, i) in users[i].messages"
+              :key="i"
+              :class="{
                   sent : message.status == 'sent',
                   dark : darkmode
                 }"
-                >
-                  {{message.message}}
-                  <div class="date" :class="{dark : darkmode}">
-                    {{message.date}}
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+            >
+              {{message.message}}
+              <div class="date" :class="{dark : darkmode}">
+                {{message.date}}
+              </div>
+            </li>
+          </ul>
           <!-- area per invio (footer) -->
           <footer :class="{dark : darkmode}">
-            <i class="far fa-smile"></i>
+            <!-- finestra per emoji (parcial footer) -->
+            <ul v-show="emojiBox" class="emoticon-box">
+              <li
+                v-for="(emoji, i) in emojis"
+                :key="i"
+                @click="newMsg += emojis[i]; putBackFocus()"
+              >
+                {{emoji}}
+              </li>
+            </ul>
+            <!-- stylyng footer vero e proprio -->
+            <i @click="emojiBox =!emojiBox" class="far fa-smile"></i>
             <input
               type="text"
               :class="{dark : darkmode}"

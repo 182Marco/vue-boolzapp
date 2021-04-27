@@ -2,51 +2,47 @@
   background-image: url(../img/mine.webp);
   flex-grow: 1;
   overflow-y: auto;
-  .sended-area-box {
-    width: 88%;
-    margin: auto;
-    ul {
-      display: flex;
-      flex-direction: column;
-    }
-    // colori in dark mode
-    &.dark {
-      background-image: url(../img/mineDark.webp);
-      background-size: 410px;
-    }
+  padding: 2% 12% 0;
+  display: flex;
+  flex-direction: column;
+  // colori in dark mode
+  &.dark {
+    background-image: url(../img/mineDark.webp);
+    background-size: 410px;
+  }
 
-    &.output {
-      justify-content: flex-end;
+  &.output {
+    justify-content: flex-end;
+  }
+  .mes {
+    position: relative;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: $spaceFromBorder;
+    min-width: 40%;
+    max-width: 70%;
+    margin-top: 12px;
+    // colori del dark
+    &.dark {
+      background-color: $darkArrived;
+      color: #fff;
     }
-    .mes {
-      position: relative;
-      border-radius: 8px;
-      background-color: #fff;
-      padding: $spaceFromBorder;
-      max-width: 70%;
-      margin-top: 12px;
+    &.sent {
+      background-color: $brand;
+      margin-left: auto;
+      &.dark {
+        background-color: $darkSent;
+      }
+    }
+    .date {
+      color: $Icon;
+      position: absolute;
+      bottom: 5%;
+      right: 3%;
+      font-size: calc(0.3rem + 0.3vw);
       // colori del dark
       &.dark {
-        background-color: $darkArrived;
         color: #fff;
-      }
-      &.sent {
-        background-color: $brand;
-        margin-left: auto;
-        &.dark {
-          background-color: $darkSent;
-        }
-      }
-      .date {
-        color: $Icon;
-        position: absolute;
-        bottom: 5%;
-        right: 3%;
-        font-size: calc(0.3rem + 0.3vw);
-        // colori del dark
-        &.dark {
-          color: #fff;
-        }
       }
     }
   }

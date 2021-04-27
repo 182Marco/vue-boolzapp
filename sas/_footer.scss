@@ -1,0 +1,36 @@
+// footer (area scrittura messaggi)
+footer {
+  position: relative;
+  @include flex(row, space-around, center);
+  width: 100%;
+  // finestra per emoji
+  .emoticon-box {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    @include width-height(100%, 300%);
+    background-color: $bg3;
+    border-bottom: 1px solid $semiLightTxt;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin: 0 10px;
+    }
+  }
+  input {
+    padding: 0 2%;
+    @include width-height(77%, 75%);
+    // colori in dark mode
+    &.dark {
+      background-color: $bgDark2;
+      color: $txtColorInDark1;
+    }
+  }
+  i {
+    font-size: calc(0.7rem + 0.8vw);
+    color: $darkIcon;
+    &:hover {
+      color: $black;
+    }
+  }
+}
