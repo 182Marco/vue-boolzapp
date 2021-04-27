@@ -52,11 +52,11 @@
               <!-- icona per modifica nome profilo -->
               <i
                 class="fas fa-pencil-alt"
-                :class="{active : changeProfName,
+                :class="{active : changeProfBox,
                          dark : darkmode
                         }"
-                @click="userThoughtsBox = !userThoughtsBox;
-                changeProfName = !changeProfName"
+                @click="changeProfBox = !changeProfBox;
+                changeProfActive= !changeProfActive"
               ></i>
               <!-- icona per inserimento frase presentaizone profilo -->
               <i
@@ -70,21 +70,22 @@
               </i>
               <i class="fas fa-ellipsis-v"></i>
             </div>
-            <!-- input per cambiare frase sotto nome profilo -->
+            <!-- input per cambiare nome profilo -->
             <div
               class="input-box"
               :class="{dark : darkmode}"
-              v-show="changeProfName"
+              v-show="changeProfBox"
             >
               <i
                 class="far fa-smile"
                 @click="emojiChangeUser = !emojiChangeUser"
               ></i>
               <input
+                maxlength="22"
                 type="text"
                 :class="{dark : darkmode}"
-                v-model="userThoughts"
-                ref="inputProfileName"
+                v-model="profileName"
+                ref="inputprofileName"
               />
               <!-- finestra per emoji -->
               <ul
@@ -95,13 +96,13 @@
                 <li
                   v-for="(emoji, i) in emojis"
                   :key="i"
-                  @click="userThoughts += emojis[i]; focusInThoughts()"
+                  @click="profileName += emojis[i]; focusInInputProfName()"
                 >
                   {{emoji}}
                 </li>
               </ul>
             </div>
-            <!-- input per cambiare nome profilo -->
+            <!-- input per cambiare frase sotto nome profilo -->
             <div
               class="input-box"
               :class="{dark : darkmode}"
@@ -112,10 +113,11 @@
                 @click="emojiChangeUser = !emojiChangeUser"
               ></i>
               <input
+                maxlength="30"
                 type="text"
                 :class="{dark : darkmode}"
-                v-model="profileName"
-                ref="inputThoughts"
+                v-model="userThoughts"
+                ref="inputProfileThoughts"
               />
               <!-- finestra per emoji -->
               <ul

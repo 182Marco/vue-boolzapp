@@ -169,10 +169,11 @@ const app = new Vue({
     darkmode: false,
     notifyActive: false,
     userThoughtsBox: false,
+    changeProfBox: false,
     thoughtsActive: false,
+    changeProfActive: false,
     emojiBox: false,
     emojiChangeUser: false,
-    changeProfName: false,
     onLine: true,
     idChat: 0,
     newMsg: ``,
@@ -229,9 +230,13 @@ const app = new Vue({
     putBackFocus() {
       this.$refs.inputMsg.focus();
     },
-    // frase da mettere sotto profilo
+    // Input per cambiare nome profilo
+    focusInInputProfName() {
+      this.$refs.inputprofileName.focus();
+    },
+    // Input per frase da mettere sotto profilo
     focusInThoughts() {
-      this.$refs.inputThoughts.focus();
+      this.$refs.inputProfileThoughts.focus();
     },
   },
 });

@@ -47,7 +47,7 @@ header {
     margin-left: $spaceFromImg;
     position: relative;
     height: 30px;
-    @include width-height(190px, 32px);
+    @include width-height(190px, 35px);
     .userName {
       position: absolute;
       left: 0;
@@ -79,6 +79,9 @@ header {
       left: 0;
       bottom: 0;
       font-size: calc(0.4rem + 0.4vw);
+      /* line height serve a non spingere la 
+      scritta quando si inserisce emoji*/
+      line-height: 17px;
       // colore dark
       &.dark {
         color: $Icon;

@@ -245,7 +245,7 @@ header.sx .account-txt-box {
   position: relative;
   height: 30px;
   width: 190px;
-  height: 32px;
+  height: 35px;
 }
 
 header.sx .account-txt-box .userName {
@@ -282,6 +282,9 @@ header.sx .account-txt-box .userThoughtsEl {
   left: 0;
   bottom: 0;
   font-size: calc(0.4rem + 0.4vw);
+  /* line height serve a non spingere la 
+      scritta quando si inserisce emoji*/
+  line-height: 17px;
 }
 
 header.sx .account-txt-box .userThoughtsEl.dark {
@@ -431,7 +434,7 @@ aside .input-box i {
 
 aside ul {
   background-color: #fff;
-  height: 77.5%;
+  height: 75.5%;
   overflow-y: auto;
   /* togliere bg e bordi da emoji nel
      cambiamento testi dell'account */
