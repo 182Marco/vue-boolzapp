@@ -128,7 +128,11 @@
           <!-- area per invio (footer) -->
           <footer :class="{dark : darkmode}">
             <!-- finestra per emoji (parcial footer) -->
-            <ul v-show="emojiBox" class="emoticon-box">
+            <ul
+              v-show="emojiBox"
+              class="emoticon-box"
+              :class="{dark : darkmode}"
+            >
               <li
                 v-for="(emoji, i) in emojis"
                 :key="i"

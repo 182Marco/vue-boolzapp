@@ -58,7 +58,7 @@ aside {
     input {
       @include width-height(97%, 62%);
       padding-left: 15%;
-      color: #e0e1e2;
+      color: $bgInputInDark;
       // colori in dark mode
       &.dark {
         background-color: $bgDark2;

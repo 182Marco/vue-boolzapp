@@ -365,7 +365,7 @@ aside .search-contact-box input {
   width: 97%;
   height: 62%;
   padding-left: 15%;
-  color: #e0e1e2;
+  color: #35363b;
 }
 
 aside .search-contact-box input.dark {
@@ -538,10 +538,16 @@ footer .emoticon-box {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+footer .emoticon-box.dark {
+  background-color: #191919;
+  border-bottom: 1px solid #000;
 }
 
 footer .emoticon-box li {
-  margin: 0 10px;
+  margin: 3px 10px;
 }
 
 footer input {
