@@ -41,11 +41,38 @@
           </header>
           <!-- reattangolo vuoi ricevere notifiche -->
           <div class="active-note-box" :class="{dark : darkmode}">
-            <i class="fas fa-bell-slash" :class="{dark : darkmode}"></i>
+            <i
+              class="fas fa-bell-slash"
+              :class="{dark : darkmode}"
+              @click="notifyActive = !notifyActive"
+              v-show="!notifyActive"
+            ></i>
+            <i
+              @click="notifyActive = !notifyActive"
+              v-show="notifyActive"
+              class="fas fa-bell"
+              :class="{dark : darkmode}"
+            ></i>
             <div class="wrap">
-              <p>Ricevi le notifiche di nuovi messaggi</p>
-              <a href="#" :class="{dark : darkmode}"
+              <p v-show="!notifyActive">
+                Ricevi le notifiche di nuovi messaggi
+              </p>
+              <p v-show="notifyActive">
+                Hai attivato le notifiche per i nuovi messaggi
+              </p>
+              <a
+                href="#"
+                :class="{dark : darkmode}"
+                v-show="!notifyActive"
+                @click="notifyActive =!notifyActive"
                 >Attiva notifiche desktop</a
+              >
+              <a
+                href="#"
+                :class="{dark : darkmode}"
+                v-show="notifyActive"
+                @click="notifyActive =!notifyActive"
+                >Disattiva notifiche desktop</a
               >
             </div>
           </div>

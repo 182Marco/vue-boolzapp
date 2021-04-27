@@ -168,6 +168,7 @@ const app = new Vue({
     ],
     darkmode: false,
     emojiBox: false,
+    notifyActive: false,
     idChat: 0,
     newMsg: ``,
     searchUser: ``,

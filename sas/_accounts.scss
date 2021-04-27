@@ -13,8 +13,8 @@
   span {
     padding-left: $spaceFromImg;
     display: inline-block;
+    // colori in dark mode
     &.dark {
-      // colori in dark mode {
       color: #fff;
     }
   }
