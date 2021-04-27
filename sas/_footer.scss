@@ -38,5 +38,10 @@ footer {
   }
   li {
     margin: 3px 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.15);
+    }
   }
 }
