@@ -193,7 +193,7 @@ header {
 }
 
 header .wrap-options {
-  width: 100px;
+  width: 150px;
   padding-right: 18px;
   font-size: calc(0.6rem + 0.7vw);
   display: -webkit-box;
@@ -209,6 +209,10 @@ header .wrap-options {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+header .wrap-options i.active {
+  color: #59585d;
 }
 
 header.dx .wrap {
@@ -232,12 +236,52 @@ header.dx .wrap span:last-child {
   color: #777e82;
 }
 
-header.sx .wrap-options {
-  min-width: 90px;
+header.sx .account-txt-box {
+  margin-left: 7px;
+  position: relative;
+  height: 30px;
+  width: 190px;
+  height: 32px;
 }
 
-header.dx .wrap-options {
-  min-width: 120px;
+header.sx .account-txt-box .userName {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  /* altezza e larghezza minima servono
+       a non muovere il figlio in absolute
+        qunado il contenuto viene canellato
+        per cambiare nome prof */
+  min-width: 83px;
+  min-height: 17px;
+}
+
+header.sx .account-txt-box .userName.notOnLine, header.sx .account-txt-box .userName.dark {
+  color: #bababa;
+}
+
+header.sx .account-txt-box .userName .NotOnLineEl {
+  width: 90px;
+  height: 22px;
+  position: absolute;
+  left: 104%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: calc(0.5rem + 0.5vw);
+  padding: 2px;
+}
+
+header.sx .account-txt-box .userThoughtsEl {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: calc(0.4rem + 0.4vw);
+}
+
+header.sx .account-txt-box .userThoughtsEl.dark {
+  color: #bababa;
 }
 
 header,
@@ -338,7 +382,7 @@ aside .active-note-box .wrap a.dark {
   color: #59585d;
 }
 
-aside .search-contact-box {
+aside .input-box {
   position: relative;
   height: 5.5%;
   background-color: #f1eeee;
@@ -357,23 +401,23 @@ aside .search-contact-box {
           align-items: center;
 }
 
-aside .search-contact-box.dark {
+aside .input-box.dark {
   background-color: #1f1f1f;
 }
 
-aside .search-contact-box input {
+aside .input-box input {
   width: 97%;
   height: 62%;
   padding-left: 15%;
   color: #35363b;
 }
 
-aside .search-contact-box input.dark {
+aside .input-box input.dark {
   background-color: #2e2f33;
   color: #a8a9ab;
 }
 
-aside .search-contact-box i {
+aside .input-box i {
   position: absolute;
   left: 6%;
   top: 50%;
@@ -416,6 +460,32 @@ aside li.dark {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+header.sx {
+  position: relative;
+}
+
+header.sx .input-box {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border: 1px solid #dfe0d8;
+  border-left: none;
+  border-right: none;
+  z-index: 10;
+  width: 100%;
+  height: 9vh;
+}
+
+header.sx .input-box.dark {
+  border-color: #191919;
+}
+
+header.sx .input-box .emoticon-box {
+  bottom: 0;
+  top: 100%;
+  height: 24vh;
+}
+
 .account-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,7 +518,7 @@ aside li.dark {
 
 /* classe active portata da js su 
 conversazione attualmente selezionata*/
-.active::after {
+ul li.active::after {
   position: absolute;
   right: 5%;
   top: 50%;
@@ -542,31 +612,6 @@ footer {
   width: 100%;
 }
 
-footer .emoticon-box {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  width: 100%;
-  height: 300%;
-  background-color: #f1eeee;
-  border-bottom: 1px solid #ccc;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  overflow-y: auto;
-}
-
-footer .emoticon-box.dark {
-  background-color: #191919;
-  border-bottom: 1px solid #000;
-}
-
-footer .emoticon-box li {
-  margin: 3px 10px;
-}
-
 footer input {
   padding: 0 2%;
   width: 77%;
@@ -585,5 +630,30 @@ footer i {
 
 footer i:hover {
   color: #000;
+}
+
+.emoticon-box {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  background-color: #f1eeee;
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.emoticon-box.dark {
+  background-color: #191919;
+  border-bottom: 1px solid #000;
+}
+
+.emoticon-box li {
+  margin: 3px 10px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -30,13 +30,103 @@
             <!-- account dell'utente -->
             <a href="#" class="account-box">
               <img src="img/avatar_io.jpg" alt="person" />
-              <span :class="{dark : darkmode}">Nome Utente</span>
+              <div class="account-txt-box">
+                <p
+                  class="userName"
+                  :class="{dark : darkmode,
+                  notOnLine: !onLine}"
+                >
+                  {{profileName}}
+                  <span class="NotOnLineEl" v-show="!onLine"
+                    >(Non In linea)</span
+                  >
+                </p>
+                <div class="userThoughtsEl" :class="{dark : darkmode}">
+                  {{userThoughts}}
+                </div>
+              </div>
             </a>
             <!-- wrap opzioni su header sx -->
             <div class="wrap-options">
-              <i class="fas fa-circle-notch"></i>
-              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-circle-notch" @click="onLine = ! onLine"></i>
+              <!-- icona Per modifica nome profilo -->
+              <i
+                class="fas fa-pencil-alt"
+                :class="{active : changeProfName}"
+                @click="userThoughtsBox = !userThoughtsBox;
+                changeProfName = !changeProfName"
+              ></i>
+              <!-- icona per inserimento frase presentaizone profilo -->
+              <i
+                class="fas fa-comment-alt"
+                :class="{active : thoughtsActive}"
+                @click="userThoughtsBox = !userThoughtsBox;
+                  thoughtsActive = !thoughtsActive"
+              >
+              </i>
               <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <!-- input per cambiare frase sotto nome profilo -->
+            <div
+              class="input-box"
+              :class="{dark : darkmode}"
+              v-show="changeProfName"
+            >
+              <i
+                class="far fa-smile"
+                @click="emojiChangeUser = !emojiChangeUser"
+              ></i>
+              <input
+                type="text"
+                :class="{dark : darkmode}"
+                v-model="userThoughts"
+                ref="inputProfileName"
+              />
+              <!-- finestra per emoji -->
+              <ul
+                v-show="emojiChangeUser"
+                class="emoticon-box"
+                :class="{dark : darkmode}"
+              >
+                <li
+                  v-for="(emoji, i) in emojis"
+                  :key="i"
+                  @click="userThoughts += emojis[i]; focusInThoughts()"
+                >
+                  {{emoji}}
+                </li>
+              </ul>
+            </div>
+            <!-- input per cambiare nome profilo -->
+            <div
+              class="input-box"
+              :class="{dark : darkmode}"
+              v-show="userThoughtsBox"
+            >
+              <i
+                class="far fa-smile"
+                @click="emojiChangeUser = !emojiChangeUser"
+              ></i>
+              <input
+                type="text"
+                :class="{dark : darkmode}"
+                v-model="profileName"
+                ref="inputThoughts"
+              />
+              <!-- finestra per emoji -->
+              <ul
+                v-show="emojiChangeUser"
+                class="emoticon-box"
+                :class="{dark : darkmode}"
+              >
+                <li
+                  v-for="(emoji, i) in emojis"
+                  :key="i"
+                  @click="userThoughts += emojis[i]; focusInThoughts()"
+                >
+                  {{emoji}}
+                </li>
+              </ul>
             </div>
           </header>
           <!-- reattangolo vuoi ricevere notifiche -->
@@ -77,7 +167,7 @@
             </div>
           </div>
           <!-- ricerca chat -->
-          <div class="search-contact-box" :class="{dark : darkmode}">
+          <div class="input-box" :class="{dark : darkmode}">
             <i class="fas fa-search"></i>
             <input
               type="text"

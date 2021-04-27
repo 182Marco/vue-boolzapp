@@ -22,7 +22,7 @@
 
 /* classe active portata da js su 
 conversazione attualmente selezionata*/
-.active::after {
+ul li.active::after {
   position: absolute;
   right: 5%;
   top: 50%;

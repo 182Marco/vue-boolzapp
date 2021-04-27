@@ -3,25 +3,6 @@ footer {
   position: relative;
   @include flex(row, space-around, center);
   width: 100%;
-  // finestra per emoji
-  .emoticon-box {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    @include width-height(100%, 300%);
-    background-color: $bg3;
-    border-bottom: 1px solid $semiLightTxt;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    &.dark {
-      background-color: $bgDark1;
-      border-bottom: 1px solid $black;
-    }
-    li {
-      margin: 3px 10px;
-    }
-  }
   input {
     padding: 0 2%;
     @include width-height(77%, 75%);
@@ -37,5 +18,25 @@ footer {
     &:hover {
       color: $black;
     }
+  }
+}
+
+// finestra per emoji
+.emoticon-box {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  @include width-height(100%, 300%);
+  background-color: $bg3;
+  border-bottom: 1px solid $semiLightTxt;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  &.dark {
+    background-color: $bgDark1;
+    border-bottom: 1px solid $black;
+  }
+  li {
+    margin: 3px 10px;
   }
 }

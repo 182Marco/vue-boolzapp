@@ -167,10 +167,17 @@ const app = new Vue({
       `🤤`,
     ],
     darkmode: false,
-    emojiBox: false,
     notifyActive: false,
+    userThoughtsBox: false,
+    thoughtsActive: false,
+    emojiBox: false,
+    emojiChangeUser: false,
+    changeProfName: false,
+    onLine: true,
     idChat: 0,
     newMsg: ``,
+    profileName: `Nome Utente`,
+    userThoughts: `Hey there! I'm using Boolzapp`,
     searchUser: ``,
   },
   methods: {
@@ -217,9 +224,14 @@ const app = new Vue({
       min == min < 10 ? (min = `0${min}`) : min;
       return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
     },
-    /* funz rimette focus su input msg se si clicca emoji*/
+    /* funz rimette focus su input se si clicca emoji*/
+    // messaggi
     putBackFocus() {
       this.$refs.inputMsg.focus();
+    },
+    // frase da mettere sotto profilo
+    focusInThoughts() {
+      this.$refs.inputThoughts.focus();
     },
   },
 });

@@ -23,10 +23,13 @@ header {
   @include flex(row, space-between, center);
   // contenitore icone degli header
   .wrap-options {
-    width: 100px;
+    width: 150px;
     padding-right: $spaceFromBorder;
     font-size: $fontSizeUtente;
     @include flex(row, space-between, center);
+    i.active {
+      color: $txtColorInDark2;
+    }
   }
   // contenitore icone header a dx
   &.dx .wrap {
@@ -36,14 +39,49 @@ header {
       color: $darkIcon;
     }
   }
-}
-// contenitore delle icone opzioni nell'header a sx
-header.sx .wrap-options {
-  min-width: 90px;
-}
-// contenitore delle icone opzioni nell'header a dx
-header.dx .wrap-options {
-  min-width: 120px;
+  // scritte del nome utente in alto a sx
+  &.sx .account-txt-box {
+    margin-left: $spaceFromImg;
+    position: relative;
+    height: 30px;
+    @include width-height(190px, 32px);
+    .userName {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0;
+      /* altezza e larghezza minima servono
+       a non muovere il figlio in absolute
+        qunado il contenuto viene canellato
+        per cambiare nome prof */
+      min-width: 83px;
+      min-height: 17px;
+      // colore se non in linea o dark
+      &.notOnLine,
+      &.dark {
+        color: $Icon;
+      }
+      .NotOnLineEl {
+        @include width-height(90px, 22px);
+        position: absolute;
+        left: 104%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: calc(0.5rem + 0.5vw);
+        padding: 2px;
+      }
+    }
+    .userThoughtsEl {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-size: calc(0.4rem + 0.4vw);
+      // colore dark
+      &.dark {
+        color: $Icon;
+      }
+    }
+  }
 }
 // sezione della messaggistica
 header,
