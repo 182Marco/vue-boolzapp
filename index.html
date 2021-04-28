@@ -280,17 +280,17 @@
             >
               <li
                 class="mes"
-                v-for="(message, index) in users[i].messages"
-                v-show="visibleMsg(message,i, user)"
+                v-for="(objMsg, index) in users[i].messages"
+                v-show="visibleMsg(objMsg,i, user)"
                 :key="index"
                 :class="{
-                  sent : message.status == 'sent',
+                  sent : objMsg.status == 'sent',
                   dark : darkmode
                 }"
               >
-                {{message.message}}
+                {{objMsg.message}}
                 <div class="date" :class="{dark : darkmode}">
-                  {{message.date}}
+                  {{objMsg.date}}
                 </div>
               </li>
             </ul>
@@ -321,12 +321,17 @@
               v-model.trim="newMsg"
               ref="inputMsg"
             />
-            <i v-show=" newMsg == ''" class="fas fa-microphone"></i>
-            <i
-              v-show=" newMsg != ''"
-              @click="writeMsg"
-              class="fab fa-telegram-plane"
-            ></i>
+            <!-- costruito un box a dim fisse per evitare
+            che quando le icone si scambiano display una è
+            più grande e spinge gli altri flex item -->
+            <div class="box-mic-sendIco">
+              <i v-show=" newMsg == ''" class="fas fa-microphone"></i>
+              <i
+                v-show=" newMsg != ''"
+                @click="writeMsg"
+                class="fab fa-telegram-plane"
+              ></i>
+            </div>
           </footer>
         </section>
       </main>

@@ -373,14 +373,14 @@ const app = new Vue({
       return lowerUser.includes(lowerSearch);
     },
     // capire che msg vanno in v-show
-    visibleMsg(message, i) {
+    visibleMsg(objMsg, i) {
       if (this.searchedMsg == ``) {
         return i == this.idChat;
       } else {
         if (i == this.idChat) {
-          let a = message.message.includes(this.searchedMsg);
-          console.log(a);
-          return message.message.includes(this.searchedMsg);
+          const lowerMsg = objMsg.message.toLowerCase();
+          const lowerSearch = this.searchedMsg.toLowerCase();
+          return lowerMsg.includes(lowerSearch);
         } else {
           return false;
         }
