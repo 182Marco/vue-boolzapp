@@ -267,7 +267,7 @@ const app = new Vue({
       `avatar_8.jpg`,
       `avatar_io.jpg`,
     ],
-    darkmode: true,
+    darkmode: false,
     notifyActive: false,
     userThoughtsBox: false,
     changeProfBox: false,
