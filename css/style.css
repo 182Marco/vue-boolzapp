@@ -649,11 +649,17 @@ ul li.active::after {
   height: 7px;
 }
 
-.sended-area {
+.msg-section {
+  min-height: 82%;
   background-image: url(../img/mine.webp);
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+}
+
+.msg-section.dark {
+  background-image: url(../img/mineDark.webp);
+  background-size: 410px;
+}
+
+.msg-section .sended-area {
   overflow-y: auto;
   padding: 2% 12% 0;
   display: -webkit-box;
@@ -665,18 +671,13 @@ ul li.active::after {
           flex-direction: column;
 }
 
-.sended-area.dark {
-  background-image: url(../img/mineDark.webp);
-  background-size: 410px;
-}
-
-.sended-area.output {
+.msg-section .sended-area.output {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-.sended-area .mes {
+.msg-section .sended-area .mes {
   position: relative;
   border-radius: 8px;
   background-color: #fff;
@@ -686,21 +687,21 @@ ul li.active::after {
   margin-top: 12px;
 }
 
-.sended-area .mes.dark {
+.msg-section .sended-area .mes.dark {
   background-color: #3c3c3e;
   color: #fff;
 }
 
-.sended-area .mes.sent {
+.msg-section .sended-area .mes.sent {
   background-color: #ddfabf;
   margin-left: auto;
 }
 
-.sended-area .mes.sent.dark {
+.msg-section .sended-area .mes.sent.dark {
   background-color: #056161;
 }
 
-.sended-area .mes .date {
+.msg-section .sended-area .mes .date {
   color: #bababa;
   position: absolute;
   bottom: 5%;
@@ -708,7 +709,7 @@ ul li.active::after {
   font-size: calc(0.3rem + 0.3vw);
 }
 
-.sended-area .mes .date.dark {
+.msg-section .sended-area .mes .date.dark {
   color: #fff;
 }
 

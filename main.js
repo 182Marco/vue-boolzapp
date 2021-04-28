@@ -267,7 +267,7 @@ const app = new Vue({
       `avatar_8.jpg`,
       `avatar_io.jpg`,
     ],
-    darkmode: false,
+    darkmode: true,
     notifyActive: false,
     userThoughtsBox: false,
     changeProfBox: false,
@@ -366,6 +366,19 @@ const app = new Vue({
       const lowerUser = this.users[i].name.toLowerCase();
       const lowerSearch = this.searchUser.toLowerCase();
       return lowerUser.includes(lowerSearch);
+    },
+    // capire che msg vanno in v-show
+    visibleMsg(user, i) {
+      if (this.searchedMsg == ``) {
+        return this.users[i] == this.users[this.idChat];
+      } else {
+        if (this.users[i] == this.users[this.idChat]) {
+          return user.messages.forEach((e) => {
+            console.log(e.message.includes(this.searchedMsg));
+            e.message.includes(this.searchedMsg);
+          });
+        }
+      }
     },
   },
 });
