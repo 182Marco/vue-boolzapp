@@ -1,6 +1,7 @@
 .msg-section {
   min-height: 82%;
   background-image: url(../img/mine.webp);
+  overflow-y: scroll;
   // colori dark
   &.dark {
     background-image: url(../img/mineDark.webp);
@@ -21,7 +22,7 @@
       background-color: #fff;
       padding: $spaceFromBorder;
       min-width: 40%;
-      max-width: 70%;
+      max-width: 60%;
       margin-top: 12px;
       // colori del dark
       &.dark {

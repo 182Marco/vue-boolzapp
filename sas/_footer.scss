@@ -12,11 +12,17 @@ footer {
       color: $txtColorInDark1;
     }
   }
-  i {
-    font-size: calc(0.7rem + 0.8vw);
-    color: $darkIcon;
-    &:hover {
-      color: $black;
+  // costruito un box a dim fisse per evitare
+  // che quando le icone si scambiano display una è
+  // più grande e spinge gli altri flex item
+  .box-mic-sendIco {
+    @include width-height(18px, 18px);
+    i {
+      font-size: calc(0.7rem + 0.8vw);
+      color: $darkIcon;
+      &:hover {
+        color: $black;
+      }
     }
   }
 }

@@ -309,7 +309,7 @@ header.sx .account-txt-box .userName.notOnLine, header.sx .account-txt-box .user
 }
 
 header.sx .account-txt-box .userName .NotOnLineEl {
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: calc(0.4rem + 0.4vw);
   padding: 2px;
 }
 
@@ -652,6 +652,7 @@ ul li.active::after {
 .msg-section {
   min-height: 82%;
   background-image: url(../img/mine.webp);
+  overflow-y: scroll;
 }
 
 .msg-section.dark {
@@ -683,7 +684,7 @@ ul li.active::after {
   background-color: #fff;
   padding: 13px;
   min-width: 40%;
-  max-width: 70%;
+  max-width: 60%;
   margin-top: 12px;
 }
 
@@ -741,12 +742,17 @@ footer input.dark {
   color: #a8a9ab;
 }
 
-footer i {
+footer .box-mic-sendIco {
+  width: 18px;
+  height: 18px;
+}
+
+footer .box-mic-sendIco i {
   font-size: calc(0.7rem + 0.8vw);
   color: #777e82;
 }
 
-footer i:hover {
+footer .box-mic-sendIco i:hover {
   color: #000;
 }
 
