@@ -286,8 +286,13 @@ const app = new Vue({
     userThoughts: `Hey there! I'm using Boolzapp`,
     searchUser: ``,
     searchedMsg: ``,
+    MsgShow: true,
   },
   methods: {
+    showMsg() {
+      console.log(`ciao`);
+      searchedMsg == `` ? users[i] == users[idChat] : null;
+    },
     /* push obj con msg e chiamata 
     funzioni per ottenere proprietà ulteriori*/
     writeMsg() {
@@ -335,12 +340,14 @@ const app = new Vue({
     putBackFocus() {
       this.$refs.inputMsg.focus();
     },
-    // Input per cambiare nome profilo
+    // focus in input per cambiare nome profilo
     focusInInputProfName() {
+      console.log('fuck');
       this.$refs.inputprofileName.focus();
     },
-    // Input per frase da mettere sotto profilo
+    // focus in input per frase da mettere sotto profilo
     focusInThoughts() {
+      console.log('fuck');
       this.$refs.inputProfileThoughts.focus();
     },
     // change avatar function

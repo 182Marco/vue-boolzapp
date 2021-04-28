@@ -62,7 +62,7 @@
                          dark : darkmode
                         }"
                 @click="changeProfBox = !changeProfBox;
-                changeProfActive= !changeProfActive"
+                changeProfActive= !changeProfActive; focusInInputProfName"
               ></i>
               <!-- icona per inserimento frase presentaizone profilo -->
               <i
@@ -71,7 +71,7 @@
                          dark : darkmode
                         }"
                 @click="userThoughtsBox = !userThoughtsBox;
-                  thoughtsActive = !thoughtsActive"
+                  thoughtsActive = !thoughtsActive; focusInThoughts"
               >
               </i>
               <!-- incona per cambiare avatar al profilo -->
@@ -278,7 +278,7 @@
             :key="`i-${user.avatar}`"
             class="sended-area"
             :class="{dark : darkmode}"
-            v-show="users[i] == users[idChat]"
+            v-show="searchedMsg == `` ? users[i] == users[idChat]: null"
           >
             <li
               class="mes"
