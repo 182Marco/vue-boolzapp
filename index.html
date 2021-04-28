@@ -251,6 +251,7 @@
                 class="input-box"
                 v-show="searchMsg"
                 :class="{dark : darkmode}"
+                ref="inputSearchMsg"
               >
                 <input
                   v-show="searchMsg"
@@ -265,7 +266,7 @@
                 class="fas fa-search"
                 :class="{active: searchMsg,
                          dark : darkmode}"
-                @click="searchMsg = !searchMsg"
+                @click="toggleSearchMsg()"
               ></i>
               <i class="fas fa-adjust" @click="darkmode = !darkmode"></i>
             </div>
@@ -276,12 +277,12 @@
               v-for="(user, i ) in users"
               :key="`i-${user.avatar}`"
               class="sended-area"
-              v-show="visibleMsg(user,i)"
             >
               <li
                 class="mes"
-                v-for="(message, i) in users[i].messages"
-                :key="i"
+                v-for="(message, index) in users[i].messages"
+                v-show="visibleMsg(message,i, user)"
+                :key="index"
                 :class="{
                   sent : message.status == 'sent',
                   dark : darkmode

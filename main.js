@@ -361,6 +361,11 @@ const app = new Vue({
       this.thoughtsActive = !this.thoughtsActive;
       this.focusInThoughts();
     },
+    // toggolare search input per filtrare msg
+    toggleSearchMsg() {
+      this.searchMsg = !this.searchMsg;
+      this.$refs.inputSearchMsg.focus();
+    },
     // filtrare gli utenti che interessano con casella di input
     filterUsers(i) {
       const lowerUser = this.users[i].name.toLowerCase();
@@ -368,15 +373,16 @@ const app = new Vue({
       return lowerUser.includes(lowerSearch);
     },
     // capire che msg vanno in v-show
-    visibleMsg(user, i) {
+    visibleMsg(message, i) {
       if (this.searchedMsg == ``) {
-        return this.users[i] == this.users[this.idChat];
+        return i == this.idChat;
       } else {
-        if (this.users[i] == this.users[this.idChat]) {
-          return user.messages.forEach((e) => {
-            console.log(e.message.includes(this.searchedMsg));
-            e.message.includes(this.searchedMsg);
-          });
+        if (i == this.idChat) {
+          let a = message.message.includes(this.searchedMsg);
+          console.log(a);
+          return message.message.includes(this.searchedMsg);
+        } else {
+          return false;
         }
       }
     },
