@@ -248,10 +248,28 @@
             </a>
             <!-- wrap delle opzioni su header dx -->
             <div class="wrap-options">
+              <!-- a scomparsa funzione ricerca msg -->
+              <div
+                class="input-box"
+                v-show="searchMsg"
+                :class="{dark : darkmode}"
+              >
+                <input
+                  v-show="searchMsg"
+                  v-model="searchedMsg"
+                  type="text"
+                  placeholder="Cerca Messaggio"
+                  :class="{dark : darkmode}"
+                />
+              </div>
+              <!-- icone vere e proprie -->
+              <i
+                class="fas fa-search"
+                :class="{active: searchMsg,
+                         dark : darkmode}"
+                @click="searchMsg = !searchMsg"
+              ></i>
               <i class="fas fa-adjust" @click="darkmode = !darkmode"></i>
-              <i class="fas fa-search"></i>
-              <i class="fas fa-paperclip"></i>
-              <i class="fas fa-ellipsis-v"></i>
             </div>
           </header>
           <!-- area sended message -->
@@ -300,7 +318,7 @@
               :class="{dark : darkmode}"
               placeholder="Scrivi un messaggio"
               @keyup.enter="writeMsg"
-              v-model="newMsg"
+              v-model.trim="newMsg"
               ref="inputMsg"
             />
             <i v-show=" newMsg == ''" class="fas fa-microphone"></i>

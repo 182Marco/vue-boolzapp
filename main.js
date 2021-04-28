@@ -165,6 +165,96 @@ const app = new Vue({
       `😑`,
       `😧`,
       `🤤`,
+      '😝',
+      '😁',
+      '😱',
+      '👉',
+      '🙌',
+      '🍻',
+      '🔥',
+      '🌈',
+      '☀',
+      '🎈',
+      '🌹',
+      '💄',
+      '🎀',
+      '⚽',
+      '🎾',
+      '🏁',
+      '😡',
+      '👿',
+      '🐻',
+      '🐶',
+      '🐬',
+      '🐟',
+      '🍀',
+      '👀',
+      '🚗',
+      '🍎',
+      '💝',
+      '💙',
+      '👌',
+      '❤',
+      '😍',
+      '😉',
+      '😓',
+      '😳',
+      '💪',
+      '💩',
+      '🍸',
+      '🔑',
+      '💖',
+      '🌟',
+      '🎉',
+      '🌺',
+      '🎶',
+      '👠',
+      '🏈',
+      '⚾',
+      '🏆',
+      '👽',
+      '💀',
+      '🐵',
+      '🐮',
+      '🐩',
+      '🐎',
+      '💣',
+      '👃',
+      '👂',
+      '🍓',
+      '💘',
+      '💜',
+      '👊',
+      '💋',
+      '😘',
+      '😜',
+      '😵',
+      '🙏',
+      '👋',
+      '🚽',
+      '💃',
+      '💎',
+      '🚀',
+      '🌙',
+      '🎁',
+      '⛄',
+      '🌊',
+      '⛵',
+      '🏀',
+      '🎱',
+      '💰',
+      '👶',
+      '👸',
+      '🐰',
+      '🐷',
+      '🐍',
+      '🐫',
+      '🔫',
+      '👄',
+      '🚲',
+      '🍉',
+      '💛',
+      '💚',
     ],
     avatars: [
       `avatar_1.jpg`,
@@ -187,6 +277,7 @@ const app = new Vue({
     emojiChangeUser: false,
     changeAvImgLink: false,
     changeAvbox: false,
+    searchMsg: false,
     onLine: true,
     idChat: 0,
     indexAvatar: 8,
@@ -194,17 +285,17 @@ const app = new Vue({
     profileName: `Nome Utente`,
     userThoughts: `Hey there! I'm using Boolzapp`,
     searchUser: ``,
+    searchedMsg: ``,
   },
   methods: {
     /* push obj con msg e chiamata 
     funzioni per ottenere proprietà ulteriori*/
     writeMsg() {
-      if (this.newMsg.trim() != '') {
+      if (this.newMsg != '') {
         const date = this.getDateMsg();
         this.users[this.idChat].messages.push({
           date: date,
-          // nota interssante: (anche senza trim vue fa output timmato)
-          message: this.newMsg.trim(),
+          message: this.newMsg,
           status: 'sent',
         });
         this.cleanInputMsg();
@@ -220,7 +311,7 @@ const app = new Vue({
       const date = this.getDateMsg();
       this.users[this.idChat].messages.push({
         date: date,
-        message: 'ok!',
+        message: 'va bene!',
         status: 'received',
       });
     },
@@ -234,9 +325,9 @@ const app = new Vue({
       let ore = d.getHours();
       let min = d.getMinutes();
       let sec = d.getSeconds();
-      ore == ore < 10 ? (ore = `0${ore}`) : ore;
-      sec == sec < 10 ? (sec = `0${sec}`) : sec;
-      min == min < 10 ? (min = `0${min}`) : min;
+      ore = ore < 10 ? (ore = `0${ore}`) : ore;
+      sec = sec < 10 ? (sec = `0${sec}`) : sec;
+      min = min < 10 ? (min = `0${min}`) : min;
       return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
     },
     /* funz rimette focus su input se si clicca emoji*/

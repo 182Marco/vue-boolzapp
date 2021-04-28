@@ -80,7 +80,7 @@ input {
 
 input:focus {
   outline: none;
-  border: 1px solid transparent;
+  border: none;
 }
 
 ul,
@@ -193,8 +193,8 @@ header {
 }
 
 header .wrap-options {
-  width: 150px;
-  padding-right: 18px;
+  width: 155px;
+  padding-right: 13px;
   font-size: calc(0.6rem + 0.7vw);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,6 +239,46 @@ header.dx .wrap span:last-child {
   font-size: calc(0.4rem + 0.4vw);
   color: #777e82;
   font-size: 0.8rem;
+}
+
+header.dx .wrap-options {
+  position: relative;
+  width: 70px;
+}
+
+header.dx .wrap-options .input-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 3px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5px;
+  margin: 0 7px;
+  background-color: #fff;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+header.dx .wrap-options .input-box.dark {
+  background-color: #2e2f33;
+  color: #a8a9ab;
+}
+
+header.dx .wrap-options .input-box input {
+  padding-left: 7px;
+}
+
+header.dx .wrap-options .input-box input.dark {
+  background-color: #2e2f33;
+  color: #a8a9ab;
+}
+
+header.dx .wrap-options .input-box i.active.dark {
+  color: #fff;
 }
 
 header.sx .account-txt-box {
@@ -352,7 +392,7 @@ aside .active-note-box i {
           align-items: center;
   width: 43px;
   height: 43px;
-  margin-left: 18px;
+  margin-left: 13px;
   font-size: calc(0.6rem + 0.7vw);
   border-radius: 50%;
   background-color: #f5fcff;
@@ -498,7 +538,7 @@ aside header.sx .input-box .emoticon-box {
 
 aside .change-av-box {
   position: absolute;
-  width: 408px;
+  width: 400px;
   height: 9%;
   background-color: #fff;
   display: -webkit-box;
@@ -574,7 +614,7 @@ aside .change-av-box img {
 }
 
 .account-box img {
-  margin-left: 18px;
+  margin-left: 13px;
   width: 43px;
   border-radius: 50%;
 }
@@ -639,7 +679,7 @@ ul li.active::after {
   position: relative;
   border-radius: 8px;
   background-color: #fff;
-  padding: 18px;
+  padding: 13px;
   min-width: 40%;
   max-width: 70%;
   margin-top: 12px;

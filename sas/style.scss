@@ -23,7 +23,7 @@ header {
   @include flex(row, space-between, center);
   // contenitore icone degli header
   .wrap-options {
-    width: 150px;
+    width: 155px;
     padding-right: $spaceFromBorder;
     font-size: $fontSizeUtente;
     @include flex(row, space-between, center);
@@ -41,6 +41,41 @@ header {
       font-size: calc(0.4rem + 0.4vw);
       color: $darkIcon;
       font-size: $underProfNameFontS;
+    }
+  }
+  &.dx .wrap-options {
+    position: relative;
+    width: 70px;
+    // input per ricerca del messaggio header dx
+    .input-box {
+      display: flex;
+      border-radius: $b-rad;
+      justify-content: space-around;
+      padding: 5px;
+      margin: 0 $spaceFromImg;
+      background-color: #fff;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      // colori in dark
+      &.dark {
+        background-color: $bgDark2;
+        color: $txtColorInDark1;
+      }
+      // colori in dark
+      input {
+        padding-left: $spaceFromImg;
+        // colori in dark
+        &.dark {
+          background-color: $bgDark2;
+          color: $txtColorInDark1;
+        }
+      }
+      // colore in active e dark
+      i.active.dark {
+        color: #fff;
+      }
     }
   }
   // scritte del nome utente in alto a sx
