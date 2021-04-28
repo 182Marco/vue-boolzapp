@@ -26,7 +26,7 @@ body {
   height: 100vh;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 900px) {
   body {
     background-image: none;
     background-color: #282b35;
@@ -66,7 +66,7 @@ body > div.dark {
   background-image: linear-gradient(to bottom, #3c3c3e 0%, #3c3c3e 15%, #000 15%, #000 100%);
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 900px) {
   body > div {
     display: none;
   }
@@ -165,7 +165,7 @@ main {
   height: 90%;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 900px) {
   main {
     display: none;
   }
@@ -238,13 +238,14 @@ header.dx .wrap {
 header.dx .wrap span:last-child {
   font-size: calc(0.4rem + 0.4vw);
   color: #777e82;
+  font-size: 0.8rem;
 }
 
 header.sx .account-txt-box {
   margin-left: 7px;
   position: relative;
   height: 30px;
-  width: 190px;
+  width: 80%;
   height: 35px;
 }
 
@@ -266,13 +267,6 @@ header.sx .account-txt-box .userName.notOnLine, header.sx .account-txt-box .user
 }
 
 header.sx .account-txt-box .userName .NotOnLineEl {
-  width: 90px;
-  height: 22px;
-  position: absolute;
-  left: 104%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   font-size: calc(0.5rem + 0.5vw);
   padding: 2px;
 }
@@ -281,7 +275,7 @@ header.sx .account-txt-box .userThoughtsEl {
   position: absolute;
   left: 0;
   bottom: 0;
-  font-size: calc(0.4rem + 0.4vw);
+  font-size: 0.8rem;
   /* line height serve a non spingere la 
       scritta quando si inserisce emoji*/
   line-height: 17px;
@@ -316,8 +310,8 @@ section {
 }
 
 aside {
-  -ms-flex-preferred-size: 37%;
-      flex-basis: 37%;
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
   border-right: 1px solid #dfe0d8;
 }
 
@@ -474,11 +468,11 @@ aside li.dark {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-header.sx {
+aside header.sx {
   position: relative;
 }
 
-header.sx .input-box {
+aside header.sx .input-box {
   position: absolute;
   top: 100%;
   right: 0;
@@ -490,14 +484,80 @@ header.sx .input-box {
   height: 9vh;
 }
 
-header.sx .input-box.dark {
+aside header.sx .input-box.dark {
   border-color: #191919;
 }
 
-header.sx .input-box .emoticon-box {
+aside header.sx .input-box .emoticon-box {
   bottom: 0;
   top: 100%;
   height: 24vh;
+}
+
+aside .change-av-box {
+  position: absolute;
+  width: 408px;
+  height: 9%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: scroll;
+}
+
+aside .change-av-box.dark {
+  border-color: #191919;
+}
+
+aside .change-av-box li {
+  display: inline-block;
+  width: 75%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0;
+  padding: 0 7px;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+aside .change-av-box li:hover {
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+}
+
+aside .change-av-box li img {
+  width: 43px;
+  height: 43px;
+}
+
+aside .change-av-box img {
+  border-radius: 50%;
 }
 
 .account-box {

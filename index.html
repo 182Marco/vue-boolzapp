@@ -29,7 +29,13 @@
           <header class="sx" :class="{dark : darkmode}">
             <!-- account dell'utente -->
             <a href="#" class="account-box">
-              <img src="img/avatar_io.jpg" alt="person" />
+              <img
+                v-for="(avatar, i) in avatars"
+                :key="i"
+                :src="`img/${avatar}`"
+                alt="avatar"
+                v-show="avatars[i] == avatars[indexAvatar]"
+              />
               <div class="account-txt-box">
                 <p
                   class="userName"
@@ -60,7 +66,7 @@
               ></i>
               <!-- icona per inserimento frase presentaizone profilo -->
               <i
-                class="fas fa-comment-alt"
+                class="fas fa-user-plus"
                 :class="{active : thoughtsActive,
                          dark : darkmode
                         }"
@@ -68,7 +74,15 @@
                   thoughtsActive = !thoughtsActive"
               >
               </i>
-              <i class="fas fa-ellipsis-v"></i>
+              <!-- incona per cambiare avatar al profilo -->
+              <i
+                class="far fa-user-circle"
+                :class="{active : changeAvImgLink,
+                dark : darkmode
+               }"
+                @click="changeAvImgLink = !changeAvImgLink;
+                changeAvbox = !changeAvbox"
+              ></i>
             </div>
             <!-- input per cambiare nome profilo -->
             <div
@@ -81,7 +95,7 @@
                 @click="emojiChangeUser = !emojiChangeUser"
               ></i>
               <input
-                maxlength="22"
+                maxlength="12"
                 type="text"
                 :class="{dark : darkmode}"
                 v-model="profileName"
@@ -113,7 +127,7 @@
                 @click="emojiChangeUser = !emojiChangeUser"
               ></i>
               <input
-                maxlength="30"
+                maxlength="28"
                 type="text"
                 :class="{dark : darkmode}"
                 v-model="userThoughts"
@@ -135,6 +149,20 @@
               </ul>
             </div>
           </header>
+          <!-- box di selzione per cambiare Img Avatar profilo -->
+          <ul
+            v-show="changeAvbox"
+            class="change-av-box"
+            :class="{dark : darkmode}"
+          >
+            <li v-for="(avatar,i) in avatars">
+              <img
+                :src="`./img/${avatars[i]}`"
+                :alt="avatars[i]"
+                @click="changeAv(i)"
+              />
+            </li>
+          </ul>
           <!-- reattangolo vuoi ricevere notifiche -->
           <div class="active-note-box" :class="{dark : darkmode}">
             <i
@@ -203,8 +231,8 @@
         <!-- ************ -->
         <!-- macroarea dx -->
         <section>
-          <!-- intestazione -->
           <header class="dx" :class="{dark : darkmode}">
+            <!-- contatto in coversazione a dx su header -->
             <a
               v-for="(user, i) in users"
               :key="`i-${user.avatar}`"

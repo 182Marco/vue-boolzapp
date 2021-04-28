@@ -166,6 +166,17 @@ const app = new Vue({
       `😧`,
       `🤤`,
     ],
+    avatars: [
+      `avatar_1.jpg`,
+      `avatar_2.jpg`,
+      `avatar_3.jpg`,
+      `avatar_4.jpg`,
+      `avatar_5.jpg`,
+      `avatar_6.jpg`,
+      `avatar_7.jpg`,
+      `avatar_8.jpg`,
+      `avatar_io.jpg`,
+    ],
     darkmode: false,
     notifyActive: false,
     userThoughtsBox: false,
@@ -174,8 +185,11 @@ const app = new Vue({
     changeProfActive: false,
     emojiBox: false,
     emojiChangeUser: false,
+    changeAvImgLink: false,
+    changeAvbox: false,
     onLine: true,
     idChat: 0,
+    indexAvatar: 8,
     newMsg: ``,
     profileName: `Nome Utente`,
     userThoughts: `Hey there! I'm using Boolzapp`,
@@ -237,6 +251,10 @@ const app = new Vue({
     // Input per frase da mettere sotto profilo
     focusInThoughts() {
       this.$refs.inputProfileThoughts.focus();
+    },
+    // change avatar function
+    changeAv(i) {
+      this.indexAvatar = i;
     },
   },
 });
