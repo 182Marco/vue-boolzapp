@@ -286,13 +286,8 @@ const app = new Vue({
     userThoughts: `Hey there! I'm using Boolzapp`,
     searchUser: ``,
     searchedMsg: ``,
-    MsgShow: true,
   },
   methods: {
-    showMsg() {
-      console.log(`ciao`);
-      searchedMsg == `` ? users[i] == users[idChat] : null;
-    },
     /* push obj con msg e chiamata 
     funzioni per ottenere proprietà ulteriori*/
     writeMsg() {
@@ -342,17 +337,35 @@ const app = new Vue({
     },
     // focus in input per cambiare nome profilo
     focusInInputProfName() {
-      console.log('fuck');
+      console.log('Sono stata chiamata: focusInInputProfName');
       this.$refs.inputprofileName.focus();
     },
     // focus in input per frase da mettere sotto profilo
     focusInThoughts() {
-      console.log('fuck');
+      console.log('Sono stata chiamata: focusInThoughts');
       this.$refs.inputProfileThoughts.focus();
     },
     // change avatar function
     changeAv(i) {
       this.indexAvatar = i;
+    },
+    // toggolare emoji box nell'input per cambiare nome profilo
+    toggleEmojiBoxChangeProf() {
+      this.changeProfBox = !this.changeProfBox;
+      this.changeProfActive = !this.changeProfActive;
+      this.focusInInputProfName();
+    },
+    // toggolare emoji box nell'input frasetta con pensieri user
+    toggleEmojiBoxThoughts() {
+      this.userThoughtsBox = !this.userThoughtsBox;
+      this.thoughtsActive = !this.thoughtsActive;
+      this.focusInThoughts();
+    },
+    // filtrare gli utenti che interessano con casella di input
+    filterUsers(i) {
+      const lowerUser = this.users[i].name.toLowerCase();
+      const lowerSearch = this.searchUser.toLowerCase();
+      return lowerUser.includes(lowerSearch);
     },
   },
 });

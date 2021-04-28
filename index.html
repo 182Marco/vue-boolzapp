@@ -61,8 +61,7 @@
                 :class="{active : changeProfBox,
                          dark : darkmode
                         }"
-                @click="changeProfBox = !changeProfBox;
-                changeProfActive= !changeProfActive; focusInInputProfName"
+                @click="toggleEmojiBoxChangeProf()"
               ></i>
               <!-- icona per inserimento frase presentaizone profilo -->
               <i
@@ -70,8 +69,7 @@
                 :class="{active : thoughtsActive,
                          dark : darkmode
                         }"
-                @click="userThoughtsBox = !userThoughtsBox;
-                  thoughtsActive = !thoughtsActive; focusInThoughts"
+                @click="toggleEmojiBoxThoughts"
               >
               </i>
               <!-- incona per cambiare avatar al profilo -->
@@ -127,7 +125,7 @@
                 @click="emojiChangeUser = !emojiChangeUser"
               ></i>
               <input
-                maxlength="28"
+                maxlength="29"
                 type="text"
                 :class="{dark : darkmode}"
                 v-model="userThoughts"
@@ -219,7 +217,7 @@
                        active: idChat == i
                       }"
               @click="idChat = i"
-              v-show="users[i].name.toLowerCase().includes(searchUser.toLowerCase())"
+              v-show="filterUsers(i)"
             >
               <a href="#" class="account-box">
                 <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
