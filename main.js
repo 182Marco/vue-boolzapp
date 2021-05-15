@@ -334,16 +334,16 @@ const app = new Vue({
     // messaggi
     putBackFocus() {
       this.$refs.inputMsg.focus();
+      // setTimeout(() => this.$refs.inputMsg.focus(), 100);
     },
     // focus in input per cambiare nome profilo
     focusInInputProfName() {
-      console.log('Sono stata chiamata: focusInInputProfName');
-      this.$refs.inputprofileName.focus();
+      setTimeout(() => this.$refs.inputprofileName.focus(), 100);
     },
     // focus in input per frase da mettere sotto profilo
     focusInThoughts() {
       console.log('Sono stata chiamata: focusInThoughts');
-      this.$refs.inputProfileThoughts.focus();
+      setTimeout(() => this.$refs.inputProfileThoughts.focus(), 100);
     },
     // change avatar function
     changeAv(i) {
@@ -364,7 +364,7 @@ const app = new Vue({
     // toggolare search input per filtrare msg
     toggleSearchMsg() {
       this.searchMsg = !this.searchMsg;
-      this.$refs.inputSearchMsg.focus();
+      setTimeout(() => this.$refs.inputSearchMsg.focus(), 10);
     },
     // filtrare gli utenti che interessano con casella di input
     filterUsers(i) {
