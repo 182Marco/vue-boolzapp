@@ -140,6 +140,11 @@ section {
   flex-direction: column;
 }
 
+// toggolare proprietà display
+.noshow {
+  display: none;
+}
+
 @import 'aside.scss';
 @import 'accounts.scss';
 @import 'areaMessage.scss';

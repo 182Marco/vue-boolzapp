@@ -89,8 +89,14 @@
               v-show="changeProfBox"
             >
               <i
-                class="far fa-smile"
                 @click="emojiChangeUser = !emojiChangeUser"
+                class="far fa-smile"
+                :class="{ noshow : emojiChangeUser}"
+              ></i>
+              <i
+                @click="emojiChangeUser = !emojiChangeUser"
+                class="fas fa-times"
+                :class="{ noshow : !emojiChangeUser}"
               ></i>
               <input
                 maxlength="13"
@@ -121,8 +127,14 @@
               v-show="userThoughtsBox"
             >
               <i
-                class="far fa-smile"
                 @click="emojiChangeUser = !emojiChangeUser"
+                class="far fa-smile"
+                :class="{ noshow : emojiChangeUser}"
+              ></i>
+              <i
+                @click="emojiChangeUser = !emojiChangeUser"
+                class="fas fa-times"
+                :class="{ noshow : !emojiChangeUser}"
               ></i>
               <input
                 maxlength="29"
@@ -312,7 +324,16 @@
               </li>
             </ul>
             <!-- stylyng footer vero e proprio -->
-            <i @click="emojiBox =!emojiBox" class="far fa-smile"></i>
+            <i
+              @click="emojiBox =!emojiBox"
+              class="far fa-smile"
+              :class="{ noshow : emojiBox}"
+            ></i>
+            <i
+              @click="emojiBox =!emojiBox"
+              class="fas fa-times"
+              :class="{ noshow : !emojiBox}"
+            ></i>
             <input
               type="text"
               :class="{dark : darkmode}"

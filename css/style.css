@@ -352,6 +352,10 @@ section {
           flex-direction: column;
 }
 
+.noshow {
+  display: none;
+}
+
 aside {
   -ms-flex-preferred-size: 400px;
       flex-basis: 400px;
