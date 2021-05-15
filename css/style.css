@@ -356,6 +356,11 @@ section {
   display: none;
 }
 
+.fas,
+.far {
+  cursor: pointer;
+}
+
 aside {
   -ms-flex-preferred-size: 400px;
       flex-basis: 400px;

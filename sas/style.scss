@@ -144,6 +144,11 @@ section {
 .noshow {
   display: none;
 }
+// cursor pointer a tutte le icone
+.fas,
+.far {
+  cursor: pointer;
+}
 
 @import 'aside.scss';
 @import 'accounts.scss';
