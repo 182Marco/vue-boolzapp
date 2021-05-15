@@ -292,28 +292,76 @@ const app = new Vue({
     funzioni per ottenere proprietà ulteriori*/
     writeMsg() {
       if (this.newMsg != '') {
-        const date = this.getDateMsg();
-        this.users[this.idChat].messages.push({
-          date: date,
+        const allMsgThisUser = this.users[this.idChat].messages;
+        const newSend = {
+          date: this.getDateMsg(),
           message: this.newMsg,
           status: 'sent',
-        });
+        };
+        this.addObjInAr(newSend, allMsgThisUser);
         this.cleanInputMsg();
         setTimeout(this.risp, 3000);
       }
+    },
+    // risposta automatizzata BOT
+    risp() {
+      const allMsgThisUser = this.users[this.idChat].messages;
+      const rispMsg = {
+        date: this.getDateMsg(),
+        message: 'va bene!',
+        status: 'received',
+      };
+      this.addObjInAr(rispMsg, allMsgThisUser);
+    },
+    // toggolare emoji box nell'input per cambiare nome profilo
+    toggleEmojiBoxAvName() {
+      this.changeProfBox = !this.changeProfBox;
+      this.changeProfActive = !this.changeProfActive;
+      this.putFocus(this.$refs.inputAvName);
+    },
+    // toggolare emoji box nell'input frasetta con pensieri user
+    setPayOf() {
+      this.userThoughtsBox = !this.userThoughtsBox;
+      this.thoughtsActive = !this.thoughtsActive;
+      this.putFocus(this.$refs.inputPayOf);
+    },
+    // filtrare gli utenti che interessano con casella di input
+    filterUsers(i) {
+      const users = this.users[i].name.toLowerCase();
+      const search = this.searchUser.toLowerCase();
+      return this.checkIncludes(users, search);
+    },
+    // capire che msg vanno in v-show dopo ricerca msg
+    visibleMsg(objMsg, i) {
+      if (this.searchedMsg == ``) {
+        return i == this.idChat;
+      } else {
+        if (i == this.idChat) {
+          const lowMsg = objMsg.message.toLowerCase();
+          const lowSearch = this.searchedMsg.toLowerCase();
+          return this.checkIncludes(lowMsg, lowSearch);
+        } else {
+          return false;
+        }
+      }
+    },
+    // FUNZIONI UTILITY
+    // put obj in objs collection
+    addObjInAr(obj, ar) {
+      return ar.push(obj);
+    },
+    // controllare se un elemnto è presente in un array
+    checkIncludes(ar, search) {
+      return ar.includes(search);
     },
     // pulire input msg dopo invio
     cleanInputMsg() {
       this.newMsg = '';
     },
-    // risposta automatizzata BOT
-    risp() {
-      const date = this.getDateMsg();
-      this.users[this.idChat].messages.push({
-        date: date,
-        message: 'va bene!',
-        status: 'received',
-      });
+    // gli input sono a scomparsa -> Vue non prende ref non display
+    //  sintassi setTimeout classica fa perdere ambito visibilità di this.->ES7
+    putFocus(refName) {
+      setTimeout(() => refName.focus(), 100);
     },
     getDateMsg() {
       // ottenere data ora della scrittuta Msg
@@ -329,62 +377,6 @@ const app = new Vue({
       sec = sec < 10 ? (sec = `0${sec}`) : sec;
       min = min < 10 ? (min = `0${min}`) : min;
       return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
-    },
-    /* funz rimette focus su input se si clicca emoji*/
-    // messaggi
-    putBackFocus() {
-      this.$refs.inputMsg.focus();
-      // setTimeout(() => this.$refs.inputMsg.focus(), 100);
-    },
-    // focus in input per cambiare nome profilo
-    focusInInputProfName() {
-      setTimeout(() => this.$refs.inputprofileName.focus(), 100);
-    },
-    // focus in input per frase da mettere sotto profilo
-    focusInThoughts() {
-      console.log('Sono stata chiamata: focusInThoughts');
-      setTimeout(() => this.$refs.inputProfileThoughts.focus(), 100);
-    },
-    // change avatar function
-    changeAv(i) {
-      this.indexAvatar = i;
-    },
-    // toggolare emoji box nell'input per cambiare nome profilo
-    toggleEmojiBoxChangeProf() {
-      this.changeProfBox = !this.changeProfBox;
-      this.changeProfActive = !this.changeProfActive;
-      this.focusInInputProfName();
-    },
-    // toggolare emoji box nell'input frasetta con pensieri user
-    toggleEmojiBoxThoughts() {
-      this.userThoughtsBox = !this.userThoughtsBox;
-      this.thoughtsActive = !this.thoughtsActive;
-      this.focusInThoughts();
-    },
-    // toggolare search input per filtrare msg
-    toggleSearchMsg() {
-      this.searchMsg = !this.searchMsg;
-      setTimeout(() => this.$refs.inputSearchMsg.focus(), 10);
-    },
-    // filtrare gli utenti che interessano con casella di input
-    filterUsers(i) {
-      const lowerUser = this.users[i].name.toLowerCase();
-      const lowerSearch = this.searchUser.toLowerCase();
-      return lowerUser.includes(lowerSearch);
-    },
-    // capire che msg vanno in v-show
-    visibleMsg(objMsg, i) {
-      if (this.searchedMsg == ``) {
-        return i == this.idChat;
-      } else {
-        if (i == this.idChat) {
-          const lowerMsg = objMsg.message.toLowerCase();
-          const lowerSearch = this.searchedMsg.toLowerCase();
-          return lowerMsg.includes(lowerSearch);
-        } else {
-          return false;
-        }
-      }
     },
   },
 });

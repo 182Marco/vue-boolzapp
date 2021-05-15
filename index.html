@@ -61,7 +61,7 @@
                 :class="{active : changeProfBox,
                          dark : darkmode
                         }"
-                @click="toggleEmojiBoxChangeProf()"
+                @click="toggleEmojiBoxAvName()"
               ></i>
               <!-- icona per inserimento frase presentaizone profilo -->
               <i
@@ -69,7 +69,7 @@
                 :class="{active : thoughtsActive,
                          dark : darkmode
                         }"
-                @click="toggleEmojiBoxThoughts"
+                @click="setPayOf"
               >
               </i>
               <!-- incona per cambiare avatar al profilo -->
@@ -103,7 +103,7 @@
                 type="text"
                 :class="{dark : darkmode}"
                 v-model="profileName"
-                ref="inputprofileName"
+                ref="inputAvName"
               />
               <!-- finestra per emoji -->
               <ul
@@ -114,7 +114,7 @@
                 <li
                   v-for="(emoji, i) in emojis"
                   :key="i"
-                  @click="profileName += emojis[i]; focusInInputProfName()"
+                  @click="profileName += emojis[i]; putFocus($refs.inputAvName)"
                 >
                   {{emoji}}
                 </li>
@@ -141,7 +141,7 @@
                 type="text"
                 :class="{dark : darkmode}"
                 v-model="userThoughts"
-                ref="inputProfileThoughts"
+                ref="inputPayOf"
               />
               <!-- finestra per emoji -->
               <ul
@@ -152,7 +152,7 @@
                 <li
                   v-for="(emoji, i) in emojis"
                   :key="i"
-                  @click="userThoughts += emojis[i]; focusInThoughts()"
+                  @click="userThoughts += emojis[i]; putFocus($refs.inputPayOf)"
                 >
                   {{emoji}}
                 </li>
@@ -169,7 +169,7 @@
               <img
                 :src="`./img/${avatars[i]}`"
                 :alt="avatars[i]"
-                @click="changeAv(i)"
+                @click="indexAvatar = i"
               />
             </li>
           </ul>
@@ -278,7 +278,7 @@
                 class="fas fa-search"
                 :class="{active: searchMsg,
                          dark : darkmode}"
-                @click="toggleSearchMsg()"
+                @click="searchMsg = !searchMsg; putFocus($refs.inputSearchMsg)"
               ></i>
               <i class="fas fa-adjust" @click="darkmode = !darkmode"></i>
             </div>
@@ -318,7 +318,7 @@
               <li
                 v-for="(emoji, i) in emojis"
                 :key="i"
-                @click="newMsg += emojis[i]; putBackFocus()"
+                @click="newMsg += emojis[i]; putFocus($refs.inputMsg)"
               >
                 {{emoji}}
               </li>
