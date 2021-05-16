@@ -217,7 +217,7 @@
               type="text"
               placeholder="Cerca o inizia una nova chat"
               :class="{dark : darkmode}"
-              v-model="searchUser"
+              v-model.trim="searchUser"
             />
           </div>
           <!-- comincia lista delle chat -->
@@ -238,8 +238,7 @@
             </li>
           </ul>
         </aside>
-        <!-- ************ -->
-        <!-- macroarea dx -->
+        <!-- MACROAREA DX -->
         <section>
           <header class="dx" :class="{dark : darkmode}">
             <!-- contatto in coversazione a dx su header -->
@@ -267,7 +266,7 @@
                 <input
                   ref="inputSearchMsg"
                   v-show="searchMsg"
-                  v-model="searchedMsg"
+                  v-model.trim="searchedMsg"
                   type="text"
                   placeholder="Cerca Messaggio"
                   :class="{dark : darkmode}"
@@ -293,7 +292,7 @@
               <li
                 class="mes"
                 v-for="(objMsg, index) in users[i].messages"
-                v-show="visibleMsg(objMsg,i, user)"
+                v-show="visibleMsg(objMsg,i)"
                 :key="index"
                 :class="{
                   sent : objMsg.status == 'sent',

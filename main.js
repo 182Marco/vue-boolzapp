@@ -327,32 +327,29 @@ const app = new Vue({
     },
     // filtrare gli utenti che interessano con casella di input
     filterUsers(i) {
-      const users = this.users[i].name.toLowerCase();
-      const search = this.searchUser.toLowerCase();
-      return this.checkIncludes(users, search);
+      return this.checkIncludes(this.users[i].name, this.searchUser);
     },
     // capire che msg vanno in v-show dopo ricerca msg
     visibleMsg(objMsg, i) {
       if (this.searchedMsg == ``) {
         return i == this.idChat;
-      } else {
-        if (i == this.idChat) {
-          const lowMsg = objMsg.message.toLowerCase();
-          const lowSearch = this.searchedMsg.toLowerCase();
-          return this.checkIncludes(lowMsg, lowSearch);
-        } else {
-          return false;
-        }
       }
+      if (i == this.idChat) {
+        return this.checkIncludes(objMsg.message, this.searchedMsg);
+      }
+      return false;
     },
-    // FUNZIONI UTILITY
+    //
+    // -- FUNZIONI UTILITY --
+    //
     // put obj in objs collection
     addObjInAr(obj, ar) {
       return ar.push(obj);
     },
-    // controllare se un elemnto è presente in un array
+    // controllare se un el è presente in un ARRAY
+    // o in un ARRAY STRINGA(case insensitive)
     checkIncludes(ar, search) {
-      return ar.includes(search);
+      return ar.toLowerCase().includes(search.toLowerCase());
     },
     // pulire input msg dopo invio
     cleanInputMsg() {
