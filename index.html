@@ -229,7 +229,7 @@
                        active: idChat == i
                       }"
               @click="idChat = i"
-              v-show="filterUsers(i)"
+              v-show="checkIncludes(users[i].name, searchUser)"
             >
               <a href="#" class="account-box">
                 <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" />
@@ -360,3 +360,4 @@
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
+filterUsers

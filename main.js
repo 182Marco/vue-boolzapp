@@ -325,10 +325,6 @@ const app = new Vue({
       this.thoughtsActive = !this.thoughtsActive;
       this.putFocus(this.$refs.inputPayOf);
     },
-    // filtrare gli utenti che interessano con casella di input
-    filterUsers(i) {
-      return this.checkIncludes(this.users[i].name, this.searchUser);
-    },
     // capire che msg vanno in v-show dopo ricerca msg
     visibleMsg(objMsg, i) {
       if (this.searchedMsg == ``) {
@@ -348,6 +344,7 @@ const app = new Vue({
     },
     // controllare se un el è presente in un ARRAY
     // o in un ARRAY STRINGA(case insensitive)
+    // chimata in main.js(sopra) line 334 e in index.html line 231
     checkIncludes(ar, search) {
       return ar.toLowerCase().includes(search.toLowerCase());
     },
