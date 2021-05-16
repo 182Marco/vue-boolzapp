@@ -354,6 +354,7 @@ const app = new Vue({
     },
     // gli input sono a scomparsa -> Vue non prende ref non display
     //  sintassi setTimeout classica fa perdere ambito visibilità di this.->ES7
+    // chimata anche in index.html
     putFocus(refName) {
       setTimeout(() => refName.focus(), 100);
     },
