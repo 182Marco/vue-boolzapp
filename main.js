@@ -288,6 +288,32 @@ const app = new Vue({
     searchedMsg: ``,
   },
   methods: {
+    // FUZIONI CHE APRONO HEADER SOTTO BOX A SX
+    //  CHIUDENDO TUTTI GLI ALTRI CONTESTUALMENTE
+    // toggolare emoji box nell'input per cambiare nome profilo
+    toggleEmojiBoxAvName() {
+      this.closeAvatarChoice();
+      this.closeThoughtsChoice();
+      this.changeProfBox = !this.changeProfBox;
+      this.changeProfActive = !this.changeProfActive;
+      this.putFocus(this.$refs.inputAvName);
+    },
+    // toggolare emoji box nell'input frasetta con pensieri user
+    setPayOf() {
+      this.closeAvatarChoice();
+      this.closeProfNameChoice();
+      this.userThoughtsBox = !this.userThoughtsBox;
+      this.thoughtsActive = !this.thoughtsActive;
+      this.putFocus(this.$refs.inputPayOf);
+    },
+    // cambiare avatar profilo
+    openAvatars() {
+      this.closeProfNameChoice();
+      this.closeThoughtsChoice();
+      this.changeAvImgLink = !this.changeAvImgLink;
+      this.changeAvbox = !this.changeAvbox;
+    },
+    // METODI PER FUNZIONAMENTO MESSAGGISTICA
     /* push obj con msg e chiamata 
     funzioni per ottenere proprietà ulteriori*/
     writeMsg() {
@@ -312,18 +338,6 @@ const app = new Vue({
         status: 'received',
       };
       this.addObjInAr(rispMsg, allMsgThisUser);
-    },
-    // toggolare emoji box nell'input per cambiare nome profilo
-    toggleEmojiBoxAvName() {
-      this.changeProfBox = !this.changeProfBox;
-      this.changeProfActive = !this.changeProfActive;
-      this.putFocus(this.$refs.inputAvName);
-    },
-    // toggolare emoji box nell'input frasetta con pensieri user
-    setPayOf() {
-      this.userThoughtsBox = !this.userThoughtsBox;
-      this.thoughtsActive = !this.thoughtsActive;
-      this.putFocus(this.$refs.inputPayOf);
     },
     // capire che msg vanno in v-show dopo ricerca msg
     visibleMsg(objMsg, i) {
@@ -352,12 +366,6 @@ const app = new Vue({
     cleanInputMsg() {
       this.newMsg = '';
     },
-    // gli input sono a scomparsa -> Vue non prende ref non display
-    //  sintassi setTimeout classica fa perdere ambito visibilità di this.->ES7
-    // chimata anche in index.html
-    putFocus(refName) {
-      setTimeout(() => refName.focus(), 100);
-    },
     getDateMsg() {
       // ottenere data ora della scrittuta Msg
       const d = new Date();
@@ -372,6 +380,27 @@ const app = new Vue({
       sec = sec < 10 ? (sec = `0${sec}`) : sec;
       min = min < 10 ? (min = `0${min}`) : min;
       return `${g}/${m}/${y}  ${ore}:${min}:${sec}`;
+    },
+    // gli input sono a scomparsa -> Vue non prende ref non display
+    //  sintassi setTimeout classica fa perdere ambito visibilità di this.->ES7
+    // chimata anche in index.html
+    putFocus(refName) {
+      setTimeout(() => refName.focus(), 100);
+    },
+    // funzioni di riutilizzo per chiusura box a scomparsa
+    // -> sono uno sovrapposto all'altro ->  per avere ordine
+    // quando uno si apre tutti gli altri si devono chiudere
+    closeAvatarChoice() {
+      this.changeAvImgLink = false;
+      this.changeAvbox = false;
+    },
+    closeThoughtsChoice() {
+      this.userThoughtsBox = false;
+      this.thoughtsActive = false;
+    },
+    closeProfNameChoice() {
+      this.changeProfActive = false;
+      this.changeProfBox = false;
     },
   },
 });

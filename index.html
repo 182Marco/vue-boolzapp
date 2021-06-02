@@ -78,8 +78,7 @@
                 :class="{active : changeAvImgLink,
                 dark : darkmode
                }"
-                @click="changeAvImgLink = !changeAvImgLink;
-                changeAvbox = !changeAvbox"
+                @click="openAvatars"
               ></i>
             </div>
             <!-- input per cambiare nome profilo -->
@@ -324,12 +323,12 @@
             </ul>
             <!-- stylyng footer vero e proprio -->
             <i
-              @click="emojiBox =!emojiBox"
+              @click="emojiBox =!emojiBox; putFocus($refs.inputMsg)"
               class="far fa-smile"
               :class="{ noshow : emojiBox}"
             ></i>
             <i
-              @click="emojiBox =!emojiBox"
+              @click="emojiBox =!emojiBox; putFocus($refs.inputMsg)"
               class="fas fa-times"
               :class="{ noshow : !emojiBox}"
             ></i>
